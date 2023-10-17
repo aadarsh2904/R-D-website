@@ -1,0 +1,141 @@
+.padding{
+    padding:4rem 4rem;
+}
+*{
+    font-family: system-ui;
+    font-weight: 500;
+}
+h1{
+    color: white;
+    font-family:serif ;
+}
+h3,h4{
+    font-family:system-ui;
+    font-weight: bold;
+    
+}
+.Footer{
+    background-color: #191C4E;
+}
+
+.my__footer{
+    display:flex;
+    flex-direction: column;
+}
+.my__footer-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.my__footer-links_div{
+    width:200px;
+    margin:1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: white;
+}
+.my__footer-links_div1{
+    width:300px;
+    margin:1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: white;
+    line-height: 17px;
+}
+.my__footer-links_div h4{
+    font-size: 19px;
+    line-height: 17px;
+    margin-bottom: 0.9rem;
+}
+
+.my__footer-links_div p{
+    font-size: 15px;
+    line-height: 17px;
+    margin: 0.5rem 0;
+    cursor: pointer;
+
+}
+.my__footer-links_div a{
+    color:#3FF9F9;
+    text-decoration: none;
+}
+a{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+}
+a:hover{
+    color:#fdfeff;
+}
+.socialmedia{
+    display: flex;
+    flex-direction: row;
+}
+
+.my__footer-below{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 0.2rem;
+    margin-right: 2rem;
+    text-align: center;
+    
+}
+.my__footer-below-links{
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    line-height: 15px;
+    
+    color: white;
+    font-weight: 600;
+    margin:1rem;
+    
+}
+hr{
+    color:white;
+    width:100%;
+}
+
+.icon{
+    height:400px;
+    width:400px;
+}
+.tw{
+    background:#5AA5D8;
+    font-size: 30px;
+    margin:3px;
+}
+.fb{
+    background:#3D5A98;
+    font-size: 30px;
+    margin:3px;
+}
+.ig{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    font-size: 30px;
+    margin:3px;
+}
+.contact{
+    display: flex;
+    flex-direction: row;
+}
+.contact-link{
+    display: flex;
+    flex-direction: column;
+    margin-left:10px;
+
+}
+.contact-icon{
+    margin-top: 10px;
+    color:#5AA5D8;
+}
+
+
