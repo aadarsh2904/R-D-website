@@ -1,9 +1,9 @@
 import React from 'react'
-import './navbar.css'
+import './Header.css'
 
 const navbar = () => {
   return (
-    <div>
+    <header>
     <div className='w-full h-28 bg-[#FDFEC5] border-2' >
          <div className="container mx-auto flex flex-wrap flex-col md:flex-row  ">
           <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
@@ -16,7 +16,7 @@ const navbar = () => {
           <div>
             <button className='bg-[#77B0F4] h-10 w-36 border-2 border-black rounded-lg mx-3 hover:bg-blue-300'><a>&larr;IITI Website</a></button>
           </div>
-        <div className='pl-72 '>
+        <div className='relative pl-72 '>
           <p className=' text-4xl font-normal pl-56 '> Research & Development Section, IIT Indore</p>
           <p className=' text-4xl font-normal pl-20'>  अनुसंधान एवं विकास अनुभाग, भारतीय प्रौद्योगिकी संस्थान इंदौर</p>
           </div>
@@ -54,7 +54,7 @@ const navbar = () => {
           </div>
           </div>
           </div>
-    </div>
+    </header>
 
   )
 }
