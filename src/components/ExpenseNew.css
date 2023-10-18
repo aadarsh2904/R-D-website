@@ -1,0 +1,45 @@
+.all{
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+}
+.leftcontent{
+    flex-basis: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    text-align: left;
+    padding: 10%;
+    cursor:pointer;
+}
+
+.rightcontent{
+    font-size: 1.8em;
+    font-family:"Poppins",san-seriff;
+    margin-left:0.0001em;
+    padding: 0%;
+}
+
+
+
+.rightcontent p{
+    padding:0;
+    
+
+
+}
+.allcontent{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.title{
+   color: rgb(10, 10, 136);
+   text-align: center;
+}
+.text{
+    text-align: center;
+}
