@@ -1,7 +1,7 @@
 .all{
     width: 80%;
     margin: auto;
-    padding-top: 50px;
+    padding-top: 10px;
     text-align: center;
 }
 .leftcontent{
@@ -12,7 +12,7 @@
     justify-content: space-between;
     margin-bottom: 5%;
     text-align: left;
-    padding: 10%;
+    padding: 5%;
     cursor:pointer;
 }
 
@@ -32,7 +32,7 @@
 
 }
 .allcontent{
-    margin-top: 5%;
+    margin-top: 0%;
     display: flex;
     justify-content: space-between;
 }
@@ -42,4 +42,5 @@
 }
 .text{
     text-align: center;
+    font-size: 0.8em;
 }

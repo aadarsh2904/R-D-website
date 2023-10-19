@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #fff3f3;
+    
 }
 .director{
     width: 80%;
@@ -11,27 +11,19 @@
     text-align: center;
     
     }
-.row
-{
-margin-top: 5%;
-display:flex;
-justify-content: space-between;
 
-}
 .dir-col{
     flex-basis:100% ;
    border-radius: 10px;
-   margin-bottom: 5%;
+   margin-bottom: 0%;
    text-align: left;
-   background: #fff3f3;
-   padding: 2px;
+   padding: 1px;
    cursor:pointer;
    display:flex;
    }
    .dir-col img{
-   height: 400px;
+   height: 573px;
    width:541px ;
-   margin-left: 3px;
    margin-right:35px;
    border-radius: 0%;}
    
@@ -43,10 +35,7 @@ justify-content: space-between;
      
    }
    .dir-col p{
-    font-size:1.4em; line-height:1.5em; margin-bottom:0.7em;padding: 0;padding: 10px;
+    font-size:1.3em; line-height:1.5em; margin-bottom:0.7em;padding: 0;padding: 10px;
     
    }
-   .txt,.txt h1,.txt p
-   {
-    background: rgb(149, 173, 229);
-   }
+   
