@@ -17,7 +17,7 @@ background: linear-gradient(to right, #ADD8E6 5%, #FFC0CB 95%);
   display: flex;
   flex-wrap:nowrap;
   justify-content:space-between;
-  height:100vh;
+  height:85vh;
 `;
 
 function Expensenew() {
@@ -25,15 +25,18 @@ function Expensenew() {
       <div className='all relative top-[33rem] '>
         <div className='allcontent'>
             <CurvedBox>
-            <div className ="leftcontent">
+            <div className ="leftcontent p-0">
             <ImageComponent></ImageComponent>
-            <div className="rightcontent">
-              <h1 className="title">Welcome to R&D</h1>
-              <p className='text'>
+            </div>
+            <div className="rightcontent inline ">
+              <h1 className="title text-3xl">Welcome to R&D</h1>
+              
+              <p className='text inline-block'>
                 {message}
               </p>
               </div>
-              </div>
+              
+            
             </CurvedBox>
           
             </div>

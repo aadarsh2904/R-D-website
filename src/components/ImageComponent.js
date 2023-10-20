@@ -4,9 +4,9 @@ import './ImageComponent.css';
 
 function ImageComponent() {
   return (
-    <div>
+    <div className='w-42 pt-7 text-2xl '>
      
-      <img src={require('./image/suhas_s_joshi.png')} alt="My Image" className='image1'/>
+      <img src={require('./image/suhas_s_joshi.png')} alt="My Image" className='border-4'/>
       <h1>Director Suhas S Joshi</h1>
     </div>
   );
