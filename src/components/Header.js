@@ -3,6 +3,7 @@ import './Header.css'
 
 const navbar = () => {
   return (
+  
     <header>
     <div className='w-full h-28 bg-[#FDFEC5] border-2' >
          <div className="container mx-auto flex flex-wrap flex-col md:flex-row  ">
@@ -14,7 +15,7 @@ const navbar = () => {
           alt="IITI logo"
           loading="lazy"/>
           <div>
-            <button className='bg-[#77B0F4] h-10 w-36 border-2 border-black rounded-lg mx-3 hover:bg-blue-300'><a href='https://www.iiti.ac.in/'>&larr;IITI Website</a></button>
+            <button className='bg-[#77B0F4] h-10 w-36 border-2 border-black rounded-lg mx-3 hover:bg-blue-300'><a href='https://www.iiti.ac.in/' target='_blank'>&larr;IITI Website</a></button>
           </div>
         <div className='relative pl-72 '>
           <p className=' text-4xl font-normal pl-56 '> Research & Development Section, IIT Indore</p>
@@ -55,7 +56,7 @@ const navbar = () => {
           </div>
           </div>
     </header>
-
+  
   )
 }
 

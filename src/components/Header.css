@@ -31,7 +31,7 @@ input::placeholder {
 #bgd{
     border-top:solid black 3px;
     border-bottom:solid black 3px; 
-  
+   z-index: 0;
    height: 84vh;
     background: url('C:\Users\deves\OneDrive\Documents\Desktop\R and D Website\my-app\public\bgimage.png') no-repeat center center/cover;
 }

@@ -1,7 +1,7 @@
 *{  
-    position: relative;
+    /* position: relative;
     margin: 0;
-    padding: 0;
+    padding: 0; */
     font-family: 'Poppins', sans-serif;
     
 }
@@ -14,13 +14,13 @@
     }
 
 .dir-col{
-    flex-basis:100% ;
+   
    border-radius: 10px;
    margin-bottom: 0%;
    text-align: left;
    padding: 1px;
    cursor:pointer;
-   display:flex;
+   
    }
    .dir-col img{
    height: 573px;

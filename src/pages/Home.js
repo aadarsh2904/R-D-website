@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Home.css'
 import Navbar from '../components/Header'
 import Expensenew from '../components/Expensenew.js'
 import Dean from '../components/Dean/Dean.js'

@@ -20,8 +20,10 @@ background: linear-gradient(to right, #ADD8E6 5%, #FFC0CB 95%);
   height:90vh;
 `;
 export default function Dean() {
-    return (<div className="director">
-    <div className="dir-col">
+    return (
+      <div className='relative top-[34.5rem]'>
+    <div className="director relative ">
+    <div className="dir-col ">
     <CurvedBox>
       <img src={abhi} alt="Logo" />
       <div className='txt'>
@@ -29,9 +31,10 @@ export default function Dean() {
     <p>"Welcome to our captivating photo gallery, where images come to life and stories unfold through the lens.<br/> </p>
     <p>Each photograph is a visual testament to the moments, experiences, and achievements that define our organization.</p>
 <p>In this collection, we invite you to embark on a journey of discovery, inspiration, and connection. Our carefully curated photographs capture the essence of who we are, what we do, and the impact we have on our community, industry, and beyond.</p>
-    <h3></h3>
+    {/* <h3></h3> */}
       </div>
       </CurvedBox>
+    </div>
     </div>
     </div>
     );
