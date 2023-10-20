@@ -1,17 +1,16 @@
-import Expensenew from './components/Expensenew.js'
-import Dean from './components/Dean/Dean.js'
-import Research from './components/Research.jsx'
-import Footer from './components/Footer/Footer.jsx'
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import React from 'react';
+
+import Home from './pages/Home';
 
 
 function App() {
-  return (<div>
-    <navbar></navbar>
-    <Dean></Dean>;
-<Expensenew></Expensenew>;
-<Research></Research>;
-<Footer></Footer>
-</div>
+  return (
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Home/>}></Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
