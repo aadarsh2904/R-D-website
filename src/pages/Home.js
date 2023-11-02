@@ -9,7 +9,8 @@ import Footer from '../components/Footer/Footer.jsx'
 
 const Home = () => {
   return (
-    <div className=''>
+    <div className='bg-gradient-to-r from-blue-200 to-blue-300'>
+    
       <Header />
       <nav className='sticky top-2 w-full h-20  bg-[#17265D] mt-1 border-4 border-[#C79CCB] rounded-2xl items-center z-10'>
         <ul className='flex flex-wrap flex-row items-center'>
