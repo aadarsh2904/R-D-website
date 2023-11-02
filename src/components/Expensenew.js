@@ -6,13 +6,15 @@ import ImageComponent from './ImageComponent';
 const CurvedBox = styled.div`
   
 background: linear-gradient(to right, #ADD8E6 5%, #FFC0CB 95%);
-
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
   background-color: rgba(158, 179, 220, 1);
   color: white;
   border-radius: 10px;
-  padding: 20px;
+  padding: 46px;
   text-align: center;
-  margin: 20px;
+  
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-wrap:nowrap;
@@ -22,7 +24,7 @@ background: linear-gradient(to right, #ADD8E6 5%, #FFC0CB 95%);
 
 function Expensenew() {
     return (
-      <div className='all relative top-[33rem] '>
+      <div className='all relative top-[27.5rem] '>
         <div className='allcontent'>
             <CurvedBox>
             <div className ="leftcontent p-0">

@@ -4,7 +4,7 @@ import {FaTwitter, FaInstagram, FaFacebook, FaPhone,FaMail} from 'react-icons/fa
 import {IoMailSharp} from 'react-icons/io5'
 export default function Footer() {
   return (
-    <footer className='relative top-[32rem]'>
+    <footer className='relative top-[26.5rem]'>
     <div className='Footer'>
         <div className='my__footer padding'>
             <h1>Office of Research and Development</h1>
@@ -56,10 +56,10 @@ export default function Footer() {
                         <p>R&D Policies</p>
                     </a>
                     <a href = 'first'>
-                        <p>Constitutional Policies</p>
+                        <p>Consultancy Policies</p>
                     </a>
                     <a href = 'first'>
-                        <p>Labor Safety</p>
+                        <p>Laboratory Safety</p>
                     </a>
                     <a href = 'first'>
                         <p>Funding Agencies</p>

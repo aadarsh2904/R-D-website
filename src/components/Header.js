@@ -24,34 +24,10 @@ const navbar = () => {
           </div>
   <div id='bgd' className='w-full my-1 border-2 p-1' >
            
-     <nav className='sticky top-2 w-full h-20  bg-[#17265D] mt-1 border-4 border-[#C79CCB] rounded-2xl items-center z-10'>
-      <ul className='flex flex-wrap flex-row items-center'>
-         <li><i className='text-[#BF7676] text-3xl'>&#10041;</i></li> 
-         <li><a href='#'>Home</a></li>
-         <li><a href='#'>People</a></li>
-         <li><a href='#'>Facilities</a></li>
-         <li><a href='#'>opportunity</a></li>
-         <li><a href='#'>Projects</a></li>
-         <li><a href='#'>Research Initiatives</a></li>
-         <li>
-         <div className="relative">
-        <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-           <button type="submit" className='cursor-pointer'>
-           <svg className="w-4 h-4 text-grey-500 dark:text-grey-400 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-            </button>
-      
-        </span>
-        <input type="search" id="default-search" className="block w-full  border-gray-200 py-1 px-11 rounded-3xl bg-[#C3C9EC] text-black" placeholder="Search" required/>
-        
-        
-    </div>
-      
-         </li>
-      
-          </ul>
-          </nav>
+          <marquee className='relative text-lg font-bold top-[4.9rem] z-10 bg-blue-300'> * Hello this is IIT Indore`s Research & Development Home Page</marquee>
+        <div className='w-[30rem] h-[28rem] absolute right-3 top-[15rem] bg-white border-2 border-black rounded-lg text-red-500'>
+          <p className='relative w-[27rem] mx-auto trans ' >*Hello this is a notice</p>
+        </div>
           </div>
           </div>
           </div>

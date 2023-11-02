@@ -21,11 +21,11 @@ background: linear-gradient(to right, #ADD8E6 5%, #FFC0CB 95%);
 `;
 export default function Dean() {
     return (
-      <div className='relative top-[34.5rem]'>
+      <div className='relative top-[29rem]'>
     <div className="director relative ">
     <div className="dir-col ">
     <CurvedBox>
-      <img src={abhi} alt="Logo" />
+      <img src={abhi} alt="Logo"  className='border-4 mt-6 ml-6'/>
       <div className='txt'>
       <h1 className='text-3xl'>Research at IIT INDORE</h1>
     <p>"Welcome to our captivating photo gallery, where images come to life and stories unfold through the lens.<br/> </p>
