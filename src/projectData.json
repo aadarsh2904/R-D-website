@@ -1,0 +1,12 @@
+[
+    {"id":1,"title":"Phase I/II Clinical trial of a novel asparaginase mutant for the treatment of primary and relapse acute lymphatic leukemia","status":"ongoing",  "details":0},
+    {"id":2,"title":"J P Narayan National Centre of Excellence in the Humanities","status":"ongoing",  "details":0},
+    {"id":3,"title":"TRANSLATION OF MEDICAL REPORTS AND SUPPORT SYSTEMS FOR UNDERPRIVILEGED","status":"ongoing",  "details":0},
+    {"id":4,"title":"Study of Legendre and Related Functions","status":"completed",  "details":0},
+    {"id":5,"title":"KARYASHALA: STAtistical Analysis and Modelling of Climate Extremes","status":"ongoing",  "details":0},
+    {"id":6,"title":"Development of explicit models of near-surface wave fields in the different stratum of nonlocal elastic media with micropolar structures","status":"completed","details":0},
+    {"id":7,"title":"Investigations of core-shell nanostructures for photocatalytic hydrogen evolution","status":"completed","details":0},
+    {"id":8,"title":"Porous MOF mobilized chalcogenides photoelectrodes for sustainable and clean solar-driven hydrogen fuel generation","status":"completed","details":0},
+    {"id":9,"title":"SERB SIRE","status":"completed","details":0},
+    {"id":10,"title":"Workshop on parallel computing: GPU, FPGA based computation for machine learning applications","status":"completed","details":0}
+    ]
