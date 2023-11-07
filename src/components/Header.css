@@ -3,36 +3,36 @@
     padding: 0;
 }
 ul li{
-font-size:1.5rem;
+
 color:white;
 padding:1rem;
 }
 
-ul li a:hover {
+/* ul li a:hover {
 font-size: 1.6rem;
-}
+} */
 
 ul li a:active{
 color:aquamarine
 }
 
-input::placeholder {
-    color: #374151;
+/* input::placeholder {
+    color: #577098;
   }
-  
+   */
   input:focus {
     outline: none;
   }
 
-.trans{
+/* .trans{
   transition: all 2s ease-in-out;
   transform: translateY(1rem);
   
-}
+} */
 
 #bgd{
-    border-top:solid black 3px;
-    border-bottom:solid black 3px; 
+    /* border-top:solid black 3px;
+    border-bottom:solid black 3px;  */
    z-index: 02;
    height: 84vh;
     background: url('C:\Users\deves\OneDrive\Documents\Desktop\R and D Website\my-app\public\bgimage.png') no-repeat center center/cover;

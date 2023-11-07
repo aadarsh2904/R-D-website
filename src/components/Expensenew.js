@@ -5,17 +5,17 @@ import ImageComponent from './ImageComponent';
 
 const CurvedBox = styled.div`
   
-background: linear-gradient(to right, #ADD8E6 5%, #FFC0CB 95%);
+
   margin:auto;
   margin-top:20px;
   margin-bottom:20px;
-  background-color: rgba(158, 179, 220, 1);
+
   color: white;
   border-radius: 10px;
   padding: 46px;
   text-align: center;
   
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
   display: flex;
   flex-wrap:nowrap;
   justify-content:space-between;
@@ -30,10 +30,10 @@ function Expensenew() {
             <div className ="leftcontent p-0">
             <ImageComponent></ImageComponent>
             </div>
-            <div className="rightcontent inline ">
-              <h1 className="title text-3xl">Welcome to R&D</h1>
+            <div className="rightcontent inline  ">
+              <h1 className="title text-4xl font-bold">Welcome to R&D</h1>
               
-              <p className='text inline-block'>
+              <p className='text inline-block font-medium'>
                 {message}
               </p>
               </div>

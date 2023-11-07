@@ -6,8 +6,8 @@ function ImageComponent() {
   return (
     <div className='w-42 pt-7 text-2xl '>
      
-      <img src={require('./image/suhas_s_joshi.png')} alt="My Image" className='border-4'/>
-      <h1>Director Suhas S Joshi</h1>
+      <img src={require('./image/suhas_s_joshi.png')} alt="My Image" className='border-4 shadow-lg'/>
+      <h1 className='text-blue-900'>Director Suhas S Joshi</h1>
     </div>
   );
 }
