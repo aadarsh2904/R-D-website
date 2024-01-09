@@ -7,7 +7,7 @@ const CurvedBox = styled.div`
 
 
  
-  color: white;
+  
   border-radius: 10px;
   padding: 5px;
   text-align: center;
@@ -21,11 +21,11 @@ const CurvedBox = styled.div`
 `;
 export default function Dean() {
     return (
-      <div className='relative top-[29rem]'>
+      <div className='relative top-[30rem]'>
     <div className="director relative ">
     <div className="dir-col ">
     <CurvedBox>
-      <img src={'abhinandan1.jpg'} alt="Logo"  className='border-4 mt-6 ml-6 shadow-lg'/>
+      <img src={'abhinandan1.jpg'} alt="Logo"  className='border-4 mt-6 ml-6 shadow-lg w-76'/>
       <div className='txt pt-6 font-light'>
       <h1 className='text-4xl font-bold text-blue-900'>Research at IIT INDORE</h1>
     <p>"Welcome to our captivating photo gallery, where images come to life and stories unfold through the lens.<br/> </p>

@@ -3,6 +3,7 @@ import Footer from '../components/Footer/Footer.jsx'
 import fakeData from "../projectData.json";
 import * as React from "react";
 import {useState} from 'react';
+import Navbar from '../components/navbar.js'
 
 function Project() {
     const [data,setData]=useState(fakeData);
@@ -14,6 +15,7 @@ function Project() {
       <div className="subhead">
         <h1>R&D PROJECTS</h1>
       </div>
+      <Navbar/>
       <div className="filter">
           <div className='project-filter'>
             <div className='project-filter__control'>
@@ -95,7 +97,7 @@ function Project() {
           </table>
         </div>
       </div>
-    
+    <Footer/>
     </div>
   );
 }

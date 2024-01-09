@@ -20,9 +20,9 @@ color:aquamarine
     color: #577098;
   }
    */
-  input:focus {
+  /* input:focus {
     outline: none;
-  }
+  } */
 
 /* .trans{
   transition: all 2s ease-in-out;
@@ -30,10 +30,26 @@ color:aquamarine
   
 } */
 
-#bgd{
-    /* border-top:solid black 3px;
-    border-bottom:solid black 3px;  */
+
+
+/* .bgd{
+/*    
    z-index: 02;
-   height: 84vh;
-    background: url('C:\Users\deves\OneDrive\Documents\Desktop\R and D Website\my-app\public\bgimage.png') no-repeat center center/cover;
+   background: url('C:\\Users\\deves\\OneDrive\\Documents\\Desktop\\R and D Website\\my-app\\public\\bgimage.png') no-repeat center center/cover ;
+   height: 84vh; */
+  
+
+
+.bgd::before{
+  content: ('');
+  background: url('/public/bgimage.png') no-repeat center center/cover ;
+  position: absolute;
+  z-index: 05;
+  height: 84vh;
+ width:100%;
+
+}
+
+#noticebox{
+  opacity: 1;
 }

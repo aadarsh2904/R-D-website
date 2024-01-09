@@ -10,7 +10,7 @@ const CurvedBox = styled.div`
   margin-top:20px;
   margin-bottom:20px;
 
-  color: white;
+
   border-radius: 10px;
   padding: 46px;
   text-align: center;
