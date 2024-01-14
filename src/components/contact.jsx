@@ -3,12 +3,12 @@ import React from 'react'
 
 const contact = () => {
     return (
-        <div className='relative top-[26rem] w-full h-[26rem] bg-blue-300'>
-            <h1 className='text-5xl text-center font-bold pt-2 text-black'>Contact Us</h1>
+        <div className='relative top-[26rem] w-full h-[26rem] bg-blue-200'>
+            <h1 className='text-5xl text-center font-bold pt-2 text-blue-800'>Contact Us</h1>
             <div className='flex flex-row flex-wrap w-[100%]  pt-6'>
 
                 {/* phone */}
-                <div id='phone' className='flex flex-col w-[22%] mx-auto border-2 border-black shadow-md p-1 items-center bg-white rounded-lg'>
+                <div id='phone' className='flex flex-col w-[22%] mx-auto border-2 border-black hover:border-4 hover:border-blue-600 hover:bg-blue-300 shadow-md p-1 items-center bg-white rounded-lg'>
                     <h2 className='text-center text-2xl font-bold '>Phone</h2>
 
                     <div className='flex flex-row py-4 '>
@@ -30,7 +30,7 @@ const contact = () => {
                     </div>
 
                 </div>
-                <div id='email' className='flex flex-col items-center w-[22%] border-2 border-black shadow-md p-1 mx-auto bg-white rounded-lg'>
+                <div id='email' className='flex flex-col items-center w-[22%] border-2 border-black hover:border-4 hover:border-blue-600 hover:bg-blue-300 shadow-md p-1 mx-auto bg-white rounded-lg'>
                     <h2 className='text-center text-2xl font-bold '>Email</h2>
 
                     <div className='flex flex-row py-4 '>
@@ -54,7 +54,7 @@ const contact = () => {
                     </div>
                 </div>
 
-                <div id='address' className='flex flex-col w-[40%] mx-auto border-2 border-black shadow-md p-1 items-center bg-white rounded-lg'>
+                <div id='address' className='flex flex-col w-[40%] mx-auto border-2 border-black hover:border-4 hover:border-blue-600 hover:bg-blue-300 shadow-md p-1 items-center bg-white rounded-lg'>
                     <h2 className='text-2xl text-center font-bold'>Address</h2>
 
                     <div className='flex flex-row  p-1 mx-auto '>

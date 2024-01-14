@@ -11,7 +11,7 @@ export default function Login() {
 
 
     return (
-        <div className="bg-[url('/abhinandan1.jpg')] bg-cover bg-center bg-no-repeat bg-">
+        <div className="bg-[url('/abhinandan1ed.jpg')] bg-cover bg-center bg-no-repeat bg-">
 
             <div className="relative flex flex-col justify-center min-h-screen overflow-hidden ">
                 <div className="w-full p-6 m-auto bg-white rounded-md shadow-sm shadow-current max-[1020px]:max-w-[90%] lg:max-w-xl">
@@ -61,32 +61,28 @@ export default function Login() {
                         </div>
 
                         <div className="mt-6">
-                            <button type='submit' className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#2596be] rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                            <button type='submit' className="w-full px-4 py-3 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-800 focus:outline-none focus:bg-blue-600">
                                 Login
                             </button>
                         </div>
                     </form>
+                    <h2 className='text-center'>OR</h2>
+                    <button className='w-full px-4 py-3 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-800 focus:outline-none focus:bg-blue-600'>
+                        <p className='text-center'>Login using Institute Id
+                            <svg viewBox="0 0 48 48" className='h-5 w-5 inline ml-2'>
 
-                    <p className="mt-8 text-xs font-normal text-center text-gray-700">
-                        {" "}
-                        Or login using{" "}
-                        <a
-                            href="#"
-                            className="font-medium text-[#2596be] hover:text-black"
-                        >
-                            <p className='inline'>Institute email-id </p>
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5 inline ml-1 mb-1 "
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
-                                    />
-                                </svg>
-                            
-                        </a>
-                    </p>
+                                <clipPath id="g">
+                                    <path d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z" />
+                                </clipPath>
+                                <g class="colors" clip-path="url(#g)">
+                                    <path fill="#FBBC05" d="M0 37V11l17 13z" />
+                                    <path fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z" />
+                                    <path fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z" />
+                                    <path fill="#4285F4" d="M48 48L17 24l-4-3 35-10z" />
+                                </g>
+                            </svg>
+                        </p>
+                    </button>
                 </div>
             </div>
         </div>
