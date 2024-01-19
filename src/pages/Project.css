@@ -38,8 +38,9 @@ body {
 table {
   width: 900px;
   height: 800px;
+ 
   border-collapse: collapse;
-  overflow: hidden;
+ 
   margin-bottom: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   color: rgb(153, 199, 239);

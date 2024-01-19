@@ -8,7 +8,7 @@ const navbar = () => {
 
     <header>
       <div className='w-full h-28' >
-        <div className="container mx-auto flex flex-wrap flex-col md:flex-row  ">
+        <div className=" mx-auto flex flex-wrap flex-col md:flex-row  ">
           <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
 
             <img
