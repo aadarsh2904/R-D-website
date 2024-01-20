@@ -24,7 +24,7 @@ const CurvedBox = styled.div`
 
 function Expensenew() {
     return (
-      <div className='all relative top-[27.5rem] '>
+      <div className='all relative  '>
         <div className='allcontent'>
             <CurvedBox>
             <div className ="leftcontent p-0">

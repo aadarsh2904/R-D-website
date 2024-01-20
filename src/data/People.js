@@ -1,61 +1,53 @@
-import pic1 from '../public/WhatsApp Image 2023-10-29 at 14.29.47_bf0f7353.jpg';
+
 
 export const People=[
     {
         id:1,
-        name: 'Dr. Douglas Klutz',
-        position:'Assistant Registrar',
-        email:'aryanjaiswal@gmail.com',
-        phone: '+91 73738273927',
-        image_url:pic1
+        name: 'Prof. I. A. Palani',
+        position:'Dean, R&D',
+        email:'dean.rnd [at] iiti.ac.in',
+        phone: '+91-731-6603232',
+        image_url:''
     },
     
     {
         id:2,
-        name: 'Dr. Douglas Klutz',
-        position:'Assistant Registrar',
-        email:'aryanjaiswal@gmail.com',
+        name: 'Prof. Trapti Jain',
+        position:'Associate Dean-I, R&D',
+        email:'adord1 [at] iiti.ac.in',
         phone: '+91 73738273927',
-        image_url:pic1
+        image_url:''
     },
     {
         id:3,
-        name: 'Dr. Douglas Klutz',
-        position:'Assistant Registrar',
-        email:'aryanjaiswal@gmail.com',
-        phone: '+91 73738273927',
-        image_url:pic1
+        name: 'Dr. Bodhisatwa Mazumdar',
+        position:'Associate Dean-II, R&D',
+        email:'adord2 [at] iiti.ac.in',
+        phone: '+91-731-6603249',
+        image_url:''
     },
     {
         id:4,
-        name: 'Dr. Douglas Klutz',
+        name: 'Mr. Rajeev Pandey',
         position:'Assistant Registrar',
-        email:'aryanjaiswal@gmail.com',
-        phone: '+91 73738273927',
-        image_url:pic1
+        email:'arrnd [at] iiti.ac.in',
+        phone: '+91-731-6603586',
+        image_url:''
     },
     {
         id:5,
-        name: 'Dr. Douglas Klutz',
-        position:'Assistant Registrar',
-        email:'aryanjaiswal@gmail.com',
-        phone: '+91 73738273927',
-        image_url:pic1
+        name: 'Ms. Nisha Choudhary',
+        position:'Junior Superintendent',
+        email:'managerrnd [at] iiti.ac.in',
+        phone: '+91-731-6603123',
+        image_url:''
     },
     {
         id:6,
-        name: 'Dr. Douglas Klutz',
-        position:'Assistant Registrar',
-        email:'aryanjaiswal@gmail.com',
-        phone: '+91 73738273927',
-        image_url:pic1
-    },
-    {
-        id:7,
-        name: 'Dr. Douglas Klutz',
-        position:'Assistant Registrar',
-        email:'aryanjaiswal@gmail.com',
-        phone: '+91 73738273927',
-        image_url:pic1
+        name: 'Mr. Anil Sawale',
+        position:'Attendant',
+        email:'anilsawale [at] iiti.ac.in',
+        phone: '+91-731-6603531',
+        image_url:''
     },
 ]

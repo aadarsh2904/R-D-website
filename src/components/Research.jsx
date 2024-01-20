@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 export default function Research () {
     return (
     <div>
-     <div className='research w-full my-0.5 relative top-[32.5rem]'>
+     <div className='research w-full my-0.5 relative '>
         <div class='py-4'>
             <div class='w-[40rem] text-7xl mx-auto'>
                 <motion.h1 initial={{x:-1000}} animate={{x:100}} transition={{delay: 1.5, duration:1}} >Research at a glance</motion.h1>

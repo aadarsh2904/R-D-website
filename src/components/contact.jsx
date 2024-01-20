@@ -3,9 +3,9 @@ import React from 'react'
 
 const contact = () => {
     return (
-        <div className='relative top-[26rem] w-full h-[26rem] bg-blue-200'>
-            <h1 className='text-5xl text-center font-bold pt-2 text-blue-800'>Contact Us</h1>
-            <div className='flex flex-row flex-wrap w-[100%]  pt-6'>
+        <div id='contact' className='relative  w-full pb-16 bg-blue-200'>
+            <h1 className='text-5xl text-center font-bold pt-16 text-blue-800'>Contact Us</h1>
+            <div className='flex flex-row flex-wrap w-[100%]  pt-16  '>
 
                 {/* phone */}
                 <div id='phone' className='flex flex-col w-[22%] mx-auto border-2 border-black hover:border-4 hover:border-blue-600 hover:bg-blue-300 shadow-md p-1 items-center bg-white rounded-lg'>
