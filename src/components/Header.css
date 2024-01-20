@@ -40,16 +40,5 @@ color:aquamarine
   
 
 
-.bgd::before{
-  content: ('');
-  background: url('/public/bgimage.png') no-repeat center center/cover ;
-  position: absolute;
-  z-index: 05;
-  height: 84vh;
- width:100%;
 
-}
 
-#noticebox{
-  opacity: 1;
-}

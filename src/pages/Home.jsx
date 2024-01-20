@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from '../components/Header.jsx'
+import Display from '../components/display.jsx'
 import Navbar from '../components/navbar.jsx'
 import Expensenew from '../components/Expensenew.jsx'
 import Dean from '../components/Dean/Dean.jsx'
@@ -16,10 +17,11 @@ const Home = () => {
 
       <Header />
       <Navbar />
+      <Display/>
       <Research />
       <Dean />
       <Expensenew />
-      <Contact/>
+      <Contact />
       <Footer />
     </div>
   );

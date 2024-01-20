@@ -9,7 +9,7 @@ const patent = () => {
   return (
     <div>
        
-     
+      <Navbar/>
       <Patents/>
       <Footer/>
     </div>

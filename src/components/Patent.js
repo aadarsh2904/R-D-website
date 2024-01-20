@@ -120,13 +120,13 @@ const Patents = () => {
       
       
 
-      <table className="w-full border-collapse mt-4  bg-white bg-opacity-60 text-gray-700 ml-4">
+      <table className="w-full border-collapse mt-4  bg-white bg-opacity-60 text-gray-700 ">
         <thead>
           <tr className="border">
-            <th className="border p-2 text-left bg-gray-200">S.No</th>
-            <th className="border p-2 text-left bg-gray-200">Faculty Name</th>
-            <th className="border p-2 text-left bg-gray-200">Patent Title</th>
-            <th className="border p-2 text-left bg-gray-200">Patent Status</th>
+            <th className="border p-2 text-left font-extrabold bg-gray-200">S.No</th>
+            <th className="border p-2 text-left font-extrabold bg-gray-200">Faculty Name</th>
+            <th className="border p-2 text-left font-extrabold bg-gray-200">Patent Title</th>
+            <th className="border p-2 text-left font-extrabold bg-gray-200">Patent Status</th>
           </tr>
         </thead>
         <tbody>

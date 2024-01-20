@@ -5,14 +5,14 @@ import DropdownLinkButton3 from '../dropdown/Researchdropdown'
 import DropdownLinkButton4 from '../dropdown/projectsdropdown'
 
 import DropdownLinkButton6 from './../dropdown/patentsdropdown'
+import { color } from 'framer-motion'
 
 
 
 const navbar = () => {
   return (
     <nav className='sticky top-2 w-[98%] mx-auto h-16  bg-blue-500 mt-1  border-4 border-blue-900 rounded-2xl items-center z-10 '>
-      <ul className='flex flex-wrap flex-row  pt-0 text-lg ' >
-        {/* <li><i className='text-[#BF7676] text-3xl'>&#10041;</i></li> */}
+      <ul className='flex flex-wrap flex-row  pt-0 text-lg '>
         <li>
           <a type="button" ><DropdownLinkButton /> </a>
 
@@ -20,7 +20,7 @@ const navbar = () => {
 
         </li>
         <li>
-          <a href='/people' className=' hover:text-[aqua]'>People</a>
+          <a href='/people' className=' hover:text-[aqua]'> People</a>
         </li>
 
 
@@ -40,7 +40,7 @@ const navbar = () => {
 
 
         </li>
-        <li><a href='/publications' className=' hover:text-[aqua]' >Publications
+        <li><a href='/publications' className=' hover:text-[aqua] active:underline' >Publications
         </a>
 
 

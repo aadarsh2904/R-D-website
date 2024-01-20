@@ -1,21 +1,21 @@
 import "./Project.css";
 import Footer from '../components/Footer/Footer.jsx'
-import fakeData from "../projectData.json";
-import * as React from "react";
-import {useState} from 'react';
-import Navbar from '../components/navbar.js'
 
+import * as React from "react";
+
+import Navbar from '../components/navbar'
+import Table from  '../components/table.jsx'
 function Project() {
-    const [data,setData]=useState(fakeData);
+   
 
   
 
   return (
     <div>
+      <Navbar/>
       <div className="subhead">
         <h1>R&D PROJECTS</h1>
       </div>
-      <Navbar/>
       <div className="filter">
           <div className='project-filter'>
             <div className='project-filter__control'>
@@ -71,33 +71,11 @@ function Project() {
         <button>reset</button>
       </div>
 
-      <div className="project">
-        <div className="container">
-          <table >
-            <thead>
-              <tr>
-                <th>S.No</th>
-                <th>Project</th>
-                <th>Status</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody >
-              {
-                data.map((project)=>(
-                    <tr>
-                        <td>{project.id}</td>
-                        <td>{project.title}</td>
-                        <td>{project.status}</td>
-                        <td> <button className="button">Detail</button></td>
-                    </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
-      </div>
-    <Footer/>
+      
+        <Table/>
+        <Footer/>
+    
+    
     </div>
   );
 }
