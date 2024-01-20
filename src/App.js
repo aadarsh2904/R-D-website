@@ -5,6 +5,7 @@ import People from './pages/people';
 import Patent from './pages/patents';
 import Project from './pages/Project';
 import Home from './pages/Home';
+import Sponsoredproject from './components/SponsoredProjects';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/people" element={<People/>}></Route>
         <Route path="/patent" element={<Patent/>}></Route>
-        <Route path="/project" element={<Project/>}></Route>
+        <Route path="/sponsoredproject" element={<Sponsoredproject/>}></Route>
     </Routes>
     </BrowserRouter>
   );
