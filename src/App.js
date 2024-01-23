@@ -5,6 +5,7 @@ import People from './pages/people';
 import Patent from './pages/patents';
 import Project from './pages/Project';
 import Home from './pages/Home';
+import Prius from './pages/prius';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/people" element={<People/>}></Route>
         <Route path="/patent" element={<Patent/>}></Route>
         <Route path="/project" element={<Project/>}></Route>
+        <Route path="/prius" element={<Prius/>}></Route>
     </Routes>
     </BrowserRouter>
   );
