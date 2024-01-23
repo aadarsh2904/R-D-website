@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 const data = [
-    { id: 1, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', Status: 'Ongoing', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
-    { id: 2, title: 'Patent Title 2', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 1, title: 'USCL, 5TBD Project', fundingagency: 'AICTE', year: '2020-21', Status: 'Ongoing', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
+    { id: 2, title: 'Structural Audit for KV Dholpur', fundingagency: 'DRDO', year: '2020-21', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 3, title: 'Proof checking of WHAR and SCR designs of pumping stations of PHED -RCBWSP--Phase 2', fundingagency: 'DRDO', year: '2021-22', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 4, title: 'Proof checking of design and drawing of Bareilly Project under AMRUT', fundingagency: 'DRDO', year: '2021-22', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 5, title: 'Weight reduction of solar PV module mounting structure', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Ankur Miglani', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 6, title: 'Random verification of annual inventory of hazard waste management', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Ankur Miglani', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 7, title: 'vetting of the stack structure', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Abhishek Rajput', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 7, title: 'Consultancy for scientific expertise and research collaboration on semiconducting materials', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Physics', link: 'https://example.com/project2' },
+    { id: 7, title: 'GIS/GPS SURVEY OF WAQF PROPERTIES & UPDATION IN AN ONLINE WAQF ASSETS MANAGEMENT SYSTEM OF INDIA (WAMSI) Under “QAUMI WAQF BOARD TARAQQIAATI SCHEME', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Mathematics', link: 'https://example.com/project2' },
+    
     // Add more data as needed
   ];
 
@@ -70,8 +78,8 @@ const ConsultancyProject = () => {
             className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
           >
             <option value="">Year</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
+            <option value="2020-21">2020-21</option>
+            <option value="2021-22">2021-22</option>
           </select>
         </label>
 
@@ -84,8 +92,8 @@ const ConsultancyProject = () => {
             className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
           >
             <option value=""> Faculty Member</option>
-            <option value="Faculty 1">Faculty 1</option>
-            <option value="Faculty 2">Faculty 2</option>
+            <option value="Ankur Miglani">Ankur Miglani</option>
+            <option value="Abhishek Rajput">Abhishek Rajput</option>
           </select>
         </label>
 
@@ -96,8 +104,8 @@ const ConsultancyProject = () => {
             className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
           >
             <option value=""> Department</option>
-            <option value="Computer Science">Computer Science</option>
-            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physics">Physics</option>
           </select>
         </label>
 
