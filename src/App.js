@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Prius from './pages/prius';
 import Sponsoredproject from './components/SponsoredProjects';
 import ConsultancyProject from './components/ConsultancyProject';
+import Publication from './components/Publication';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <Route path="/prius" element={<Prius/>}></Route>
         <Route path="/sponsoredproject" element={<Sponsoredproject/>}></Route>
         <Route path="/consultancyproject" element={<ConsultancyProject/>}></Route>
-
+        <Route path="/publications" element={<Publication/>}></Route>
     </Routes>
     </BrowserRouter>
   );
