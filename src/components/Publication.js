@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 const data = [
-  { id: 1, title: 'Sandeep Choudhary, Tanmay Vyas, Abhijeet Joshi PORTABLE BIOSENSING SYSTEM AND METHOD FOR MILK, SPOILAGE AND ADULTERATION DETECTION, India, 202121023242, 2021', academicYear: '2021', patentStatus: 'Filed', facultyMember: 'Abhijeet Joshi', department: 'A' },
-  { id: 2, title: 'Manish Kumar Goyal, Jhilam sinha and Jew Das A METHOD FOR MEASURING HYDROLOGICAL RESILIENCE OF A REGION IN RESPONSE TO WARMING SHIFTS , India, 201921037336, 2021', academicYear: '2022-2023', patentStatus: 'Filed', facultyMember: 'Dr. Manish Kumar Goyal', department: 'B' },
-  { id: 3, title: 'Venkatesh, C., Dudhe, P., Krishnan, M. A., Sonawane, A., Method and system for metal-free solvent-free synthesis of fused-pyrido heterocycles and their biological activities against cancer and multi-drug resistant pathogens, India, 201921029311, 2021', academicYear: '2021', patentStatus: 'Granted', facultyMember: 'Venkatesh, C.', department: 'd' },
-  { id: 4, title: 'Suhel Khan, Srivathsan Vasudevan A SYSTEM FOR ACQUIRING REAL-TIME PHOTOACOUSTIC SIGNAL WITH HIGH-SPEED SIGNAL CONDITIONING AND METHOD THEREOF, India, 202221056741, 2022', academicYear: '2022', patentStatus: 'Filed', facultyMember: 'Suhel Khan', department: 'B2' },
-  { id: 5, title: 'Trilok Gupta, Sandeep Chaudhary, Ravi Kr Sharma, Sudhir Kr Jain Method of Preparation of Conplas Paver Block utilizing waste polythene, India, Application No. 202011002264A, 2022', academicYear: '2022', patentStatus: 'Published', facultyMember: 'Trilok Gupta', department: 'Civil Engineering' },
-  { id: 6, title: 'Vikas Vijayvargiya and Santosh Kumar Vishvakarma High Performance Double Gate Tunnel Field Effect Transistor For Low Power Applications, India, 201721000199, 2022', academicYear: '', patentStatus: 'Granted', facultyMember: 'Vikas Vijayvargiya', department: 'Electrical Engineering' },
-  
-  // Add more data as needed
-];
+    { id: 1, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Journal', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
+    { id: 2, title: 'Patent Title 2', fundingagency: 'DRDO', year: '2022', publicationtype: 'Conference', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+    { id: 1, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Book', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' }
+  ];
 
-const Patents = () => {
+const Publication = () => {
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    academicYear: '',
-    patentStatus: '',
+    publicationtype:'',
+    year:'',
     facultyMember: '',
     department: '',
   });
@@ -48,17 +43,18 @@ const Patents = () => {
 
   const handleResetFilters = () => {
     setFilters({
-      academicYear: '',
-      patentStatus: '',
-      facultyMember: '',
-      department: '',
+    publicationtype:'',
+    year:'',
+    facultyMember: '',
+    department: '',
     });
   };
 
   return (
+  
     <div className="w-90 mx-auto box-border">
       <header className="bg-cover bg-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-opacity-80 text-center p-6 w-full relative h-1/4 mt-0">
-        <h1 className="text-4xl text-white">Patent Details</h1>
+        <h1 className="text-4xl text-white">Publications</h1>
       </header>
       <div
         className="flex-grow bg-cover bg-center relative"
@@ -69,32 +65,33 @@ const Patents = () => {
           backgroundColor: 'rgba(0, 0, 0, 0.1)', // Adjust opacity and color as needed
         }}
       >
-      
       <nav className="flex justify-between items-center  p-4 w-full">
         <label className="mr-8">
           <select
-            value={filters.academicYear}
-            onChange={(e) => handleFilterChange('academicYear', e.target.value)}
+            value={filters.publicationtype}
+            onChange={(e) => handleFilterChange('publicationtype', e.target.value)}
             className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
           >
-            <option value="">Select Academic Year</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
+            <option value="">Publication Type</option>
+            <option value="Journal">Journal</option>
+            <option value="Conference">Conference</option>
+            <option value="Book">Book</option>
+            
           </select>
         </label>
-
         <label className="mr-8">
           <select
-            value={filters.patentStatus}
-            onChange={(e) => handleFilterChange('patentStatus', e.target.value)}
+            value={filters.year}
+            onChange={(e) => handleFilterChange('year', e.target.value)}
             className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
           >
-            <option value="">Select Patent Status</option>
-            <option value="Filed">Filed</option>
-            <option value="Granted">Granted</option>
-            <option value="Published">Published</option>
+            <option value="">Year</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            
           </select>
         </label>
+        
 
         <label className="mr-8">
           <select
@@ -102,9 +99,9 @@ const Patents = () => {
             onChange={(e) => handleFilterChange('facultyMember', e.target.value)}
             className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
           >
-            <option value="">Select Faculty Member</option>
-            <option value="Abhijeet Joshi">Abhijeet Joshi</option>
-            <option value="Dr. Manish Kumar Goyal">Dr. Manish Kumar Goyal</option>
+            <option value=""> Faculty Member</option>
+            <option value="Faculty 1">Faculty 1</option>
+            <option value="Faculty 2">Faculty 2</option>
           </select>
         </label>
 
@@ -114,8 +111,8 @@ const Patents = () => {
             onChange={(e) => handleFilterChange('department', e.target.value)}
             className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
           >
-            <option value="">Select Department</option>
-            <option value="Civil Engineering">Civil Engineering</option>
+            <option value=""> Department</option>
+            <option value="Computer Science">Computer Science</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
           </select>
         </label>
@@ -131,35 +128,42 @@ const Patents = () => {
         <thead>
           <tr className="border">
             <th className="border p-2 text-left font-extrabold bg-gray-200">S.No</th>
-            <th className="border p-2 text-left font-extrabold bg-gray-200">Faculty Name</th>
-            <th className="border p-2 text-left font-extrabold bg-gray-200">Patent Title</th>
-            <th className="border p-2 text-left font-extrabold bg-gray-200">Patent Status</th>
+            <th className="border p-2 text-left font-extrabold bg-gray-200">Publication Details</th>
+
+            <th className="border p-2 text-left font-extrabold bg-gray-200">View</th>
           </tr>
         </thead>
         <tbody>
-          {filters.academicYear || filters.patentStatus || filters.facultyMember || filters.department
+          {filters.year  || filters.facultyMember || filters.department || filters.publicationtype
             ? filteredData.map((item, index) => (
                 <tr key={index} className="border-t hover:bg-neutral-400">
                   <td className="border p-2 text-black">{index + 1}</td>
-                  <td className="border p-2 text-black">{item.facultyMember}</td>
                   <td className="border p-2 text-black">{item.title}</td>
-                  <td className="border p-2 text-black">{item.patentStatus}</td>
+                 
+                  <td className="border p-2 text-black">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
+                      <button className="bg-blue-500 text-white p-2 rounded-md">View</button>
+                    </a>
+                  </td>
                 </tr>
               ))
             : originalData.map((item, index) => (
                 <tr key={index} className="border-t hover:bg-neutral-400">
                   <td className="border p-2 text-black">{index + 1}</td>
-                  <td className="border p-2 text-black">{item.facultyMember}</td>
                   <td className="border p-2 text-black">{item.title}</td>
-                  <td className="border p-2 text-black">{item.patentStatus}</td>
+            
+                  <td className="border p-2 text-black">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
+                      <button className="bg-blue-500 text-white p-2 rounded-md">View</button>
+                    </a>
+                  </td>
                 </tr>
               ))}
         </tbody>
       </table>
     </div>
     </div>
-    
   );
 };
 
-export default Patents;
+export default Publication;
