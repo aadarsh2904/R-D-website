@@ -7,7 +7,7 @@ const navbar = () => {
     <header>
       <div className='w-full h-28' >
         <div className=" mx-auto flex flex-wrap flex-col md:flex-row  ">
-          <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
+          <div className="flex  flex-row flex-wrap title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
 
             <img
               src="iiti logo1.jpg"
@@ -17,7 +17,7 @@ const navbar = () => {
 
             />
 
-            <div className='relative pl-2 '>
+            <div className='relative pl-2 w-60% '>
               <p className=' text-2xl font-semibold  '>  अनुसंधान एवं विकास अनुभाग, भारतीय प्रौद्योगिकी संस्थान इंदौर</p>
               <p className=' text-2xl  font-semibold '> Research & Development Section, IIT Indore</p>
             </div>

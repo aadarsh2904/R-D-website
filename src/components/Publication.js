@@ -54,7 +54,7 @@ const Publication = () => {
   
     <div className="w-90 mx-auto box-border">
       <header className="bg-cover bg-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-opacity-80 text-center p-6 w-full relative h-1/4 mt-0">
-        <h1 className="text-4xl text-white">Consultancy Projects</h1>
+        <h1 className="text-4xl text-white">Publications</h1>
       </header>
       <div
         className="flex-grow bg-cover bg-center relative"

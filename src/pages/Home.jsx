@@ -5,7 +5,8 @@ import Display from '../components/display.jsx'
 import Navbar from '../components/navbar.jsx'
 import Expensenew from '../components/Expensenew.jsx'
 import Dean from '../components/Dean/Dean.jsx'
-import Research from '../components/Research.jsx'
+// import Research from '../components/Research.jsx'
+import Research1 from '../components/Research1.jsx'
 import Contact from '../components/contact.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 
@@ -18,7 +19,8 @@ const Home = () => {
       <Header />
       <Navbar />
       <Display/>
-      <Research />
+    
+      <Research1/>
       <Dean />
       <Expensenew />
       <Contact />
