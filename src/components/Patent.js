@@ -7,7 +7,7 @@ import {
   Th,
   Td,
 } from '@chakra-ui/react';
-import { Select, Input, Flex, Text } from '@chakra-ui/react';
+import { Select, Input, Flex, Text} from '@chakra-ui/react';
 
 const data = [
   { id: 1, title: 'Sandeep Choudhary, Tanmay Vyas, Abhijeet Joshi PORTABLE BIOSENSING SYSTEM AND METHOD FOR MILK, SPOILAGE AND ADULTERATION DETECTION, India, 202121023242, 2021', academicYear: '2021', patentStatus: 'Filed', facultyMember: 'Abhijeet Joshi', department: 'A' },
@@ -63,17 +63,18 @@ const Patents = () => {
   };
 
   return (
-    <main className="px-2">
+    <main className="px-2 " >
       <Flex flexDir="row" w="100%" justifyContent="space-between" alignItems="center" my="50">
-        <Flex gap={160}>
+        <Flex gap={100} margin="30px 0px 0px 0px" justifyContent="center" alignItems="center">
           <Select
             variant="filled"
             value={filters.academicYear}
             onChange={(e) => handleFilterChange('academicYear', e.target.value)}
             placeholder="Select Academic Year"
             w="100%"
+            border="1px"
             borderRadius="5px"
-            height="2.5rem"
+            height="3rem"
             icon={<></>}
           >
             <option value="2021">2021</option>
@@ -86,7 +87,7 @@ const Patents = () => {
             placeholder="Select Patent Status"
             w="100%"
             borderRadius="5px"
-            height="2.5rem"
+            height="3rem"
             icon={<></>}
           >
             <option value="Filed">Filed</option>
@@ -101,7 +102,7 @@ const Patents = () => {
             w="100%"
             maxW="20rem"
             borderRadius="5px"
-            height="2.5rem"
+            height="3rem"
             icon={<></>}
           >
             <option value="Abhijeet Joshi">Abhijeet Joshi</option>
@@ -115,7 +116,8 @@ const Patents = () => {
             w="100%"
             maxW="20rem"
             borderRadius="5px"
-            height="2.5rem"
+            height="3rem"
+            fontsize="lg"
             icon={<></>}
           >
             <option value="Civil Engineering">Civil Engineering</option>
@@ -125,43 +127,44 @@ const Patents = () => {
       </Flex>
       <Flex flexDir="row" w="100%" justifyContent="space-between" alignItems="center" my="2">
         <div>
-          Show{' '}
-          <Select placeholder="10" w="14" border="1px" borderColor="gray.400">
+          Show entries{' '}
+          <Select placeholder="10" w="14" border="0.5px" borderColor="gray.400">
             <option value="10">10</option>
             <option value="dog">Option 1</option>
           </Select>{' '}
-          entries
+          
         </div>
         <Flex alignItems="center">
           Search:
           <Input type="text" className="border-zinc-400 border h-full rounded ml-1" />
         </Flex>
       </Flex>
-      <Table w="100%" variant="striped">
-        <Thead>
-          <Tr>
-            <Th className="w-6">S.No</Th>
-            <Th>Faculty Name</Th>
-            <Th>Patent Title</Th>
-            <Th>Patent Status</Th>
+      <Table w="100%" variant="striped" margin=" 0px 0px 200px 0px">
+        <Thead >
+          <Tr classname="bg-blue-900 text-xl font-bold ">
+            <Th className="w-6 bg-blue-900 text-xl font-bold">S.No</Th>
+            <Th className="bg-blue-900 text-xl font-bold">Faculty Name</Th>
+            <Th className="bg-blue-900 text-xl font-bold">Patent Title</Th>
+            <Th className="bg-blue-900 text-xl font-bold">Patent Status</Th>
           </Tr>
         </Thead>
         <Tbody>
           {filters.academicYear || filters.patentStatus || filters.facultyMember || filters.department
             ? filteredData.map((item, index) => (
-                <Tr key={index} className="hover:bg-table">
-                  <Td>{index + 1}</Td>
-                  <Td>{item.facultyMember}</Td>
-                  <Td>{item.title}</Td>
-                  <Td>{item.patentStatus}</Td>
+                <Tr key={index} className="hover:bg-gray-200 font-sans" >
+                  <Td  className="font-serif">{index + 1}</Td>
+                  <Td  className="font-serif">{item.facultyMember}</Td>
+                  <Td  className="font-serif">{item.title}</Td>
+                  <Td  className="font-serif">{item.title}</Td>
+                  <Td className="font-serif">{item.patentStatus}</Td>
                 </Tr>
               ))
             : originalData.map((item, index) => (
-                <Tr key={index} className="hover:bg-table">
-                  <Td>{index + 1}</Td>
-                  <Td>{item.facultyMember}</Td>
-                  <Td>{item.title}</Td>
-                  <Td>{item.patentStatus}</Td>
+                <Tr key={index} className="hover:bg-gray-200 font-sans">
+                  <Td  className="font-serif">{index + 1}</Td>
+                  <Td  className="font-serif">{item.facultyMember}</Td>
+                  <Td className="font-serif">{item.title}</Td>
+                  <Td  className="font-serif">{item.patentStatus}</Td>
                 </Tr>
               ))}
         </Tbody>
