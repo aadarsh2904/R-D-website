@@ -68,7 +68,7 @@ const Sponsoredproject = () => {
       <div
         className="flex-grow bg-cover bg-center relative"
         style={{
-          backgroundImage: "url('./abhinandan1ed.jpg')", // Replace with your background image path
+          backgroundImage: "url('./bgr.png')", // Replace with your background image path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundColor: 'rgba(0, 0, 0, 0.1)', // Adjust opacity and color as needed

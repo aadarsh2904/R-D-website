@@ -54,7 +54,7 @@ const Patents = () => {
   };
 
   return (
-    <main className="px-2">
+    <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
       <Flex flexDir="row" w="100%" justifyContent="space-between" alignItems="center" my="50">
         <Flex gap={160}>
           <Select
@@ -66,6 +66,7 @@ const Patents = () => {
             borderRadius="5px"
             height="2.5rem"
             icon={<></>}
+            bg='#cbd5e1'
           >
             <option value="2021">2021</option>
             <option value="2022">2022</option>
@@ -79,6 +80,7 @@ const Patents = () => {
             borderRadius="5px"
             height="2.5rem"
             icon={<></>}
+            bg='#cbd5e1'
           >
             <option value="Filed">Filed</option>
             <option value="Granted">Granted</option>
@@ -94,6 +96,7 @@ const Patents = () => {
             borderRadius="5px"
             height="2.5rem"
             icon={<></>}
+            bg='#cbd5e1'
           >
             <option value="Abhijeet Joshi">Abhijeet Joshi</option>
             <option value="Dr. Manish Kumar Goyal">Dr. Manish Kumar Goyal</option>
@@ -108,6 +111,7 @@ const Patents = () => {
             borderRadius="5px"
             height="2.5rem"
             icon={<></>}
+            bg='#cbd5e1'
           >
             <option value="Civil Engineering">Civil Engineering</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
@@ -143,7 +147,7 @@ const Patents = () => {
               ))}
         </Tbody>
       </Table>
-    </main>
+    </div>
   );
 };
 

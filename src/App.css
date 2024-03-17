@@ -1,0 +1,87 @@
+/* Reset CSS */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ul,
+ol,
+li,
+form,
+label,
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Box sizing */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default anchor styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-image: url('../public/theme.jpg');
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+.header {
+  background-color: #333; /* Set your desired header background color */
+  color: #fff; /* Set your desired header text color */
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Main content styles */
+.main-content {
+  padding: 20px 0;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333; /* Set your desired footer background color */
+  color: #fff; /* Set your desired footer text color */
+  padding: 20px 0;
+  text-align: center;
+}

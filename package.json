@@ -20,6 +20,8 @@
     "react-scripts": "^5.0.1",
     "styled-components": "^6.1.0",
     "swiper": "^11.0.5",
+    "tailwindcss-aspect-ratio": "^3.0.0",
+    "tailwindcss-font-inter": "^3.0.1",
     "tw-elements-react": "^1.0.0-alpha2",
     "web-vitals": "^0.2.4"
   },
