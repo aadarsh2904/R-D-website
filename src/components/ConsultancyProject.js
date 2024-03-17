@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+import { Select, Flex } from '@chakra-ui/react';
 
 const data = [
-    { id: 1, title: 'USCL, 5TBD Project', fundingagency: 'AICTE', year: '2020-21', Status: 'Ongoing', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
-    { id: 2, title: 'Structural Audit for KV Dholpur', fundingagency: 'DRDO', year: '2020-21', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-    { id: 3, title: 'Proof checking of WHAR and SCR designs of pumping stations of PHED -RCBWSP--Phase 2', fundingagency: 'DRDO', year: '2021-22', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-    { id: 4, title: 'Proof checking of design and drawing of Bareilly Project under AMRUT', fundingagency: 'DRDO', year: '2021-22', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-    { id: 5, title: 'Weight reduction of solar PV module mounting structure', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Ankur Miglani', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-    { id: 6, title: 'Random verification of annual inventory of hazard waste management', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Ankur Miglani', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-    { id: 7, title: 'vetting of the stack structure', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Abhishek Rajput', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-    { id: 7, title: 'Consultancy for scientific expertise and research collaboration on semiconducting materials', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Physics', link: 'https://example.com/project2' },
-    { id: 7, title: 'GIS/GPS SURVEY OF WAQF PROPERTIES & UPDATION IN AN ONLINE WAQF ASSETS MANAGEMENT SYSTEM OF INDIA (WAMSI) Under “QAUMI WAQF BOARD TARAQQIAATI SCHEME', fundingagency: 'DRDO', year: '2022', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Mathematics', link: 'https://example.com/project2' },
-    
-    // Add more data as needed
-  ];
+  { id: 1, title: 'USCL, 5TBD Project', fundingagency: 'AICTE', year: '2020-21', Status: 'Ongoing', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
+  { id: 2, title: 'Structural Audit for KV Dholpur', fundingagency: 'DRDO', year: '2020-21', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+  // Add more consultancy data as needed
+];
 
 const ConsultancyProject = () => {
   const [originalData, setOriginalData] = useState([]);
@@ -57,103 +51,94 @@ const ConsultancyProject = () => {
   };
 
   return (
-    <div className="w-90 mx-auto box-border">
-      <header className="bg-cover bg-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-opacity-80 text-center p-6 w-full relative h-1/4 mt-0">
-        <h1 className="text-4xl text-white">Consultancy Projects</h1>
-      </header>
-      <div
-        className="flex-grow bg-cover bg-center relative"
-        style={{
-          backgroundImage: "url('./abhinandan1ed.jpg')", // Replace with your background image path
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.1)', // Adjust opacity and color as needed
-        }}
-      >
-      <nav className="flex justify-between items-center  p-4 w-full">
-        <label className="mr-8">
-          <select
+    <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
+      <Flex flexDir="column" alignItems="center" my="50">
+        <Flex gap={350}>
+          <Select
+            variant="filled"
             value={filters.year}
             onChange={(e) => handleFilterChange('year', e.target.value)}
-            className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
+            placeholder="Select Year"
+            borderRadius="5px"
+            height="2.5rem"
+            icon={<></>}
+            bg='#cbd5e1'
           >
-            <option value="">Year</option>
+            <option value="">All Years</option>
             <option value="2020-21">2020-21</option>
-            <option value="2021-22">2021-22</option>
-          </select>
-        </label>
+            {/* Add more years as needed */}
+          </Select>
 
-        
-
-        <label className="mr-8">
-          <select
+          <Select
+            variant="filled"
             value={filters.facultyMember}
             onChange={(e) => handleFilterChange('facultyMember', e.target.value)}
-            className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
+            placeholder="Select Faculty Member"
+            borderRadius="5px"
+            height="2.5rem"
+            icon={<></>}
+            bg='#cbd5e1'
           >
-            <option value=""> Faculty Member</option>
-            <option value="Ankur Miglani">Ankur Miglani</option>
-            <option value="Abhishek Rajput">Abhishek Rajput</option>
-          </select>
-        </label>
+            <option value="">All Faculty Members</option>
+            <option value="Faculty 1">Faculty 1</option>
+            <option value="Faculty 2">Faculty 2</option>
+            {/* Add more faculty members as needed */}
+          </Select>
 
-        <label>
-          <select
+          <Select
+            variant="filled"
             value={filters.department}
             onChange={(e) => handleFilterChange('department', e.target.value)}
-            className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
+            placeholder="Select Department"
+            borderRadius="5px"
+            height="2.5rem"
+            icon={<></>}
+            bg='#cbd5e1'
           >
-            <option value=""> Department</option>
-            <option value="Mathematics">Mathematics</option>
-            <option value="Physics">Physics</option>
-          </select>
-        </label>
-
-        <button onClick={handleResetFilters} className="p-2 text-base cursor-pointer bg-blue-500 text-white rounded-md">
-          Reset
-        </button>
-      </nav>
-      
-      
-
-      <table className="w-full border-collapse mt-4  bg-white bg-opacity-60 text-gray-700 ">
-        <thead>
-          <tr className="border">
-            <th className="border p-2 text-left font-extrabold bg-gray-200">S.No</th>
-            <th className="border p-2 text-left font-extrabold bg-gray-200">Project Title</th>
-
-            <th className="border p-2 text-left font-extrabold bg-gray-200">View details</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filters.year  || filters.facultyMember || filters.department
+            <option value="">All Departments</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            {/* Add more departments as needed */}
+          </Select>
+        </Flex>
+      </Flex>
+      <Table w="100%" variant="striped">
+        <Thead>
+          <Tr className="bg-gray-200">
+            <Th className="w-250">S.No</Th>
+            <Th >Project Title </Th>
+            <Th className='w-14'>View Details</Th>
+            {/* Add more table headings as needed */}
+          </Tr>
+        </Thead>
+        <Tbody>
+          {filters.year || filters.facultyMember || filters.department
             ? filteredData.map((item, index) => (
-                <tr key={index} className="border-t hover:bg-neutral-400">
-                  <td className="border p-2 text-black">{index + 1}</td>
-                  <td className="border p-2 text-black">{item.title}</td>
-                 
-                  <td className="border p-2 text-black">
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-blue-500 text-white p-2 rounded-md">View details</button>
-                    </a>
-                  </td>
-                </tr>
-              ))
+              <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
+                <Td>{index + 1}</Td>
+                <Td>{item.title}</Td>
+                <Td>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
+                  </a>
+                </Td>
+                {/* Add more table data cells as needed */}
+              </Tr>
+            ))
             : originalData.map((item, index) => (
-                <tr key={index} className="border-t hover:bg-neutral-400">
-                  <td className="border p-2 text-black">{index + 1}</td>
-                  <td className="border p-2 text-black">{item.title}</td>
-            
-                  <td className="border p-2 text-black">
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-blue-500 text-white p-2 rounded-md">View details</button>
-                    </a>
-                  </td>
-                </tr>
-              ))}
-        </tbody>
-      </table>
-    </div>
+              <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
+                <Td>{index + 1}</Td>
+                <Td>{item.title}</Td>
+                <Td>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
+                  </a>
+                </Td>
+                {/* Add more table data cells as needed */}
+              </Tr>
+            ))}
+        </Tbody>
+      </Table>
     </div>
   );
 };
