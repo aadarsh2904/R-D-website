@@ -7,7 +7,7 @@ import {
   Th,
   Td,
 } from '@chakra-ui/react';
-import { Select, Input, Flex, Text } from '@chakra-ui/react';
+import { Select, Flex } from '@chakra-ui/react';
 
 const data = [
   { id: 1, title: 'Sandeep Choudhary, Tanmay Vyas, Abhijeet Joshi PORTABLE BIOSENSING SYSTEM AND METHOD FOR MILK, SPOILAGE AND ADULTERATION DETECTION, India, 202121023242, 2021', academicYear: '2021', patentStatus: 'Filed', facultyMember: 'Abhijeet Joshi', department: 'A' },
@@ -51,15 +51,6 @@ const Patents = () => {
 
   const handleFilterChange = (filterName, value) => {
     setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
-  };
-
-  const handleResetFilters = () => {
-    setFilters({
-      academicYear: '',
-      patentStatus: '',
-      facultyMember: '',
-      department: '',
-    });
   };
 
   return (
@@ -121,20 +112,6 @@ const Patents = () => {
             <option value="Civil Engineering">Civil Engineering</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
           </Select>
-        </Flex>
-      </Flex>
-      <Flex flexDir="row" w="100%" justifyContent="space-between" alignItems="center" my="2">
-        <div>
-          Show{' '}
-          <Select placeholder="10" w="14" border="1px" borderColor="gray.400">
-            <option value="10">10</option>
-            <option value="dog">Option 1</option>
-          </Select>{' '}
-          entries
-        </div>
-        <Flex alignItems="center">
-          Search:
-          <Input type="text" className="border-zinc-400 border h-full rounded ml-1" />
         </Flex>
       </Flex>
       <Table w="100%" variant="striped">
