@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+import { Select, Flex } from '@chakra-ui/react';
 
 const data = [
-    { id: 1, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Journal', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
-    { id: 2, title: 'Patent Title 2', fundingagency: 'DRDO', year: '2022', publicationtype: 'Conference', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-    { id: 1, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Book', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' }
-  ];
+  { id: 1, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Journal', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
+  { id: 2, title: 'Patent Title 2', fundingagency: 'DRDO', year: '2022', publicationtype: 'Conference', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
+  { id: 3, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Book', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' }
+];
 
 const Publication = () => {
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    publicationtype:'',
-    year:'',
+    publicationtype: '',
+    year: '',
     facultyMember: '',
     department: '',
   });
@@ -43,125 +45,113 @@ const Publication = () => {
 
   const handleResetFilters = () => {
     setFilters({
-    publicationtype:'',
-    year:'',
-    facultyMember: '',
-    department: '',
+      publicationtype: '',
+      year: '',
+      facultyMember: '',
+      department: '',
     });
   };
 
   return (
-  
-    <div className="w-90 mx-auto box-border">
-      <header className="bg-cover bg-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-opacity-80 text-center p-6 w-full relative h-1/4 mt-0">
-        <h1 className="text-4xl text-white">Publications</h1>
-      </header>
-      <div
-        className="flex-grow bg-cover bg-center relative"
-        style={{
-          backgroundImage: "url('./bgr.png')", // Replace with your background image path
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.1)', // Adjust opacity and color as needed
-        }}
-      >
-      <nav className="flex justify-between items-center  p-4 w-full">
-        <label className="mr-8">
-          <select
+    <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
+      <Flex flexDir="column" alignItems="center" my="50">
+        <Flex gap={200}>
+          <Select
+            variant="filled"
             value={filters.publicationtype}
             onChange={(e) => handleFilterChange('publicationtype', e.target.value)}
-            className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
+            placeholder="Publication Type"
+            borderRadius="5px"
+            height="2.5rem"
+            icon={<></>}
+            bg='#cbd5e1'
           >
-            <option value="">Publication Type</option>
+            <option value="">All Publication Types</option>
             <option value="Journal">Journal</option>
             <option value="Conference">Conference</option>
             <option value="Book">Book</option>
-            
-          </select>
-        </label>
-        <label className="mr-8">
-          <select
+          </Select>
+
+          <Select
+            variant="filled"
             value={filters.year}
             onChange={(e) => handleFilterChange('year', e.target.value)}
-            className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
+            placeholder="Year"
+            borderRadius="5px"
+            height="2.5rem"
+            icon={<></>}
+            bg='#cbd5e1'
           >
-            <option value="">Year</option>
+            <option value="">All Years</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
-            
-          </select>
-        </label>
-        
+          </Select>
 
-        <label className="mr-8">
-          <select
+          <Select
+            variant="filled"
             value={filters.facultyMember}
             onChange={(e) => handleFilterChange('facultyMember', e.target.value)}
-            className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
+            placeholder="Faculty Member"
+            borderRadius="5px"
+            height="2.5rem"
+            icon={<></>}
+            bg='#cbd5e1'
           >
-            <option value=""> Faculty Member</option>
+            <option value="">All Faculty Members</option>
             <option value="Faculty 1">Faculty 1</option>
             <option value="Faculty 2">Faculty 2</option>
-          </select>
-        </label>
+          </Select>
 
-        <label>
-          <select
+          <Select
+            variant="filled"
             value={filters.department}
             onChange={(e) => handleFilterChange('department', e.target.value)}
-            className="p-2 text-base bg-white transition duration-300 hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue"
+            placeholder="Department"
+            borderRadius="5px"
+            height="2.5rem"
+            icon={<></>}
+            bg='#cbd5e1'
           >
-            <option value=""> Department</option>
+            <option value="">All Departments</option>
             <option value="Computer Science">Computer Science</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
-          </select>
-        </label>
-
-        <button onClick={handleResetFilters} className="p-2 text-base cursor-pointer bg-blue-500 text-white rounded-md">
-          Reset
-        </button>
-      </nav>
-      
-      
-
-      <table className="w-full border-collapse mt-4  bg-white bg-opacity-60 text-gray-700 ">
-        <thead>
-          <tr className="border">
-            <th className="border p-2 text-left font-extrabold bg-gray-200">S.No</th>
-            <th className="border p-2 text-left font-extrabold bg-gray-200">Publication Details</th>
-
-            <th className="border p-2 text-left font-extrabold bg-gray-200">View</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filters.year  || filters.facultyMember || filters.department || filters.publicationtype
+          </Select>
+        </Flex>
+      </Flex>
+      <Table w="100%" variant="striped">
+        <Thead>
+          <Tr className="bg-gray-200">
+            <Th className="w-250">S.No</Th>
+            <Th>Publication Title</Th>
+            <Th className="w-14">View Details</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {filters.publicationtype || filters.year || filters.facultyMember || filters.department
             ? filteredData.map((item, index) => (
-                <tr key={index} className="border-t hover:bg-neutral-400">
-                  <td className="border p-2 text-black">{index + 1}</td>
-                  <td className="border p-2 text-black">{item.title}</td>
-                 
-                  <td className="border p-2 text-black">
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-blue-500 text-white p-2 rounded-md">View</button>
-                    </a>
-                  </td>
-                </tr>
-              ))
+              <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
+                <Td>{index + 1}</Td>
+                <Td>{item.title}</Td>
+                <Td>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
+                  </a>
+                </Td>
+              </Tr>
+            ))
             : originalData.map((item, index) => (
-                <tr key={index} className="border-t hover:bg-neutral-400">
-                  <td className="border p-2 text-black">{index + 1}</td>
-                  <td className="border p-2 text-black">{item.title}</td>
-            
-                  <td className="border p-2 text-black">
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-blue-500 text-white p-2 rounded-md">View</button>
-                    </a>
-                  </td>
-                </tr>
-              ))}
-        </tbody>
-      </table>
-    </div>
+              <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
+                <Td>{index + 1}</Td>
+                <Td>{item.title}</Td>
+                <Td>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
+                  </a>
+                </Td>
+              </Tr>
+            ))}
+        </Tbody>
+      </Table>
     </div>
   );
 };
