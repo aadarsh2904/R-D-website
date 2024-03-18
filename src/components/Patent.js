@@ -6,8 +6,9 @@ import {
   Tr,
   Th,
   Td,
+  Box,
 } from '@chakra-ui/react';
-import { Select, Flex } from '@chakra-ui/react';
+import { Select, Flex, Stack } from '@chakra-ui/react';
 
 const data = [
   { id: 1, title: 'Sandeep Choudhary, Tanmay Vyas, Abhijeet Joshi PORTABLE BIOSENSING SYSTEM AND METHOD FOR MILK, SPOILAGE AND ADULTERATION DETECTION, India, 202121023242, 2021', academicYear: '2021', patentStatus: 'Filed', facultyMember: 'Abhijeet Joshi', department: 'A' },
@@ -55,69 +56,69 @@ const Patents = () => {
 
   return (
     <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
-      <Flex flexDir="row" w="100%" justifyContent="space-between" alignItems="center" my="50">
-        <Flex gap={160}>
-          <Select
-            variant="filled"
-            value={filters.academicYear}
-            onChange={(e) => handleFilterChange('academicYear', e.target.value)}
-            placeholder="Select Academic Year"
-            w="100%"
-            borderRadius="5px"
-            height="2.5rem"
-            icon={<></>}
-            bg='#cbd5e1'
-          >
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-          </Select>
-          <Select
-            variant="filled"
-            value={filters.patentStatus}
-            onChange={(e) => handleFilterChange('patentStatus', e.target.value)}
-            placeholder="Select Patent Status"
-            w="100%"
-            borderRadius="5px"
-            height="2.5rem"
-            icon={<></>}
-            bg='#cbd5e1'
-          >
-            <option value="Filed">Filed</option>
-            <option value="Granted">Granted</option>
-            <option value="Published">Published</option>
-          </Select>
-          <Select
-            variant="filled"
-            value={filters.facultyMember}
-            onChange={(e) => handleFilterChange('facultyMember', e.target.value)}
-            placeholder="Select Faculty Member"
-            w="100%"
-            maxW="20rem"
-            borderRadius="5px"
-            height="2.5rem"
-            icon={<></>}
-            bg='#cbd5e1'
-          >
-            <option value="Abhijeet Joshi">Abhijeet Joshi</option>
-            <option value="Dr. Manish Kumar Goyal">Dr. Manish Kumar Goyal</option>
-          </Select>
-          <Select
-            variant="filled"
-            value={filters.department}
-            onChange={(e) => handleFilterChange('department', e.target.value)}
-            placeholder="Select Department"
-            w="100%"
-            maxW="20rem"
-            borderRadius="5px"
-            height="2.5rem"
-            icon={<></>}
-            bg='#cbd5e1'
-          >
-            <option value="Civil Engineering">Civil Engineering</option>
-            <option value="Electrical Engineering">Electrical Engineering</option>
-          </Select>
-        </Flex>
-      </Flex>
+      <Box mt={20} mb={20}>
+        <Stack spacing={8} px={4} py={8} alignItems="center">
+          <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
+            <Select
+              variant="filled"
+              value={filters.academicYear}
+              onChange={(e) => handleFilterChange('academicYear', e.target.value)}
+              placeholder="Select Academic Year"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="2.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+            >
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+            </Select>
+            <Select
+              variant="filled"
+              value={filters.patentStatus}
+              onChange={(e) => handleFilterChange('patentStatus', e.target.value)}
+              placeholder="Select Patent Status"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="2.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+            >
+              <option value="Filed">Filed</option>
+              <option value="Granted">Granted</option>
+              <option value="Published">Published</option>
+            </Select>
+            <Select
+              variant="filled"
+              value={filters.facultyMember}
+              onChange={(e) => handleFilterChange('facultyMember', e.target.value)}
+              placeholder="Select Faculty Member"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="2.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+            >
+              <option value="Abhijeet Joshi">Abhijeet Joshi</option>
+              <option value="Dr. Manish Kumar Goyal">Dr. Manish Kumar Goyal</option>
+            </Select>
+            <Select
+              variant="filled"
+              value={filters.department}
+              onChange={(e) => handleFilterChange('department', e.target.value)}
+              placeholder="Select Department"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="2.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+            >
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Electrical Engineering">Electrical Engineering</option>
+            </Select>
+          </Flex>
+        </Stack>
+      </Box>
       <Table w="100%" variant="striped">
         <Thead>
           <Tr className="bg-gray-200">
