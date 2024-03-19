@@ -33,15 +33,15 @@ export default function Footer() {
                     <div className='contact'>
                         <FaPhone className='contact-icon'/>
                         <div className='contact-link'>
-                            <p2>6664677746466</p2>
-                            <p2>6664677746466</p2>
+                            <p2>+91-731-660333 (Ext. 3123)</p2>
+                            <p2>+91-731-660333 (Ext. 3578)</p2>
                         </div>
                         
                     </div>
                 </div>
                 <div className='my__footer-links_div'>
                 <div style={{ fontSize: '20px' , margin: '8px', color:'rgb(7, 2, 109)' ,fontWeight: 'bold'}}>USEFUL LINKS</div>
-                    <a href = 'first'>
+                    <a href = 'https://rnd.iiti.ac.in/main/rnd_forms'>
                         <p2>R&D Forms</p2>
                     </a>
                     <a href = 'first'>
@@ -60,16 +60,16 @@ export default function Footer() {
                 </div>
                 <div className='my__footer-links_div'>
                 <div style={{ fontSize: '20px' , margin: '8px' , color:'rgb(7, 2, 109)',fontWeight: 'bold' }}>NAVIGATION</div>
-                    <a href = 'first'>
+                    <a href = 'https://www.iiti.ac.in'>
                         <p2>IIT Indore</p2>
                     </a>
-                    <a href = 'first'>
+                    <a href = 'https://mail.google.com/mail/u/0/#inbox'>
                         <p2>Webmail</p2>
                     </a>
                     <a href = 'first'>
                         <p2>Faculty Login</p2>
                     </a>
-                    <a href = 'first'>
+                    <a href = 'https://docs.google.com/forms/d/e/1FAIpQLSdwBfCNW_hqlxmRKpH57yYePOXjrrWlv35mSv100WUwsag1Nw/viewform'>
                         <p2>Copyright Registration</p2>
                     </a>
                 </div>
@@ -77,22 +77,7 @@ export default function Footer() {
                 <div className='my__footer-links_div'>
                 <div style={{ fontSize: '20px' , margin: '8px' , color:'rgb(7, 2, 109)',fontWeight: 'bold'}}>REACH US</div>
                 <iframe className='border-2 rounded-xl w-[18rem] h-[12rem] ml-[-1rem]' id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=IIT%20Indore%20Simrol+(IIT%20Indore)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-                {/* <a href = 'first' className='social'>
-                    <FaInstagram className='ig'/>
-                        <p2>Linkedin</p2>
-                    </a>
-                    <a href = 'first' className='social'>
-                        <FaTwitter className='tw'/>
-                        <p2>Twitter</p2>
-                    </a>
-                    <a href = 'first' className='social'>
-                    <FaFacebook className='fb'/>
-                        <p2>Facebook</p2>
-                    </a>
-                    <a href = 'first' className='social'>
-                    <FaInstagram className='ig'/>
-                        <p2>Instagram</p2>
-                    </a> */}
+                        
 
                 </div>
             </div>
@@ -106,7 +91,7 @@ export default function Footer() {
 
                 </div>
             </div>
-            <h2 style={{color:'rgb(7, 2, 109)'}}>© Copyright All rights reserved | R&D Section, IIT Indore</h2>
+            <h2 style={{color:'rgb(7, 2, 109)'}}>© Copyright All rights reserved | R&D Section,<a href='https://www.iiti.ac.in'>IIT INDORE</a></h2>
         </div>
     </div>
     </footer>
