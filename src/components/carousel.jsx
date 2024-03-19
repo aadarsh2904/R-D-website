@@ -1,43 +1,92 @@
-import React from "react";
-import { TECarousel, TECarouselItem } from "tw-elements-react";
+import React, { useState, useEffect } from "react";
 
-export default function CarouselWithControls(){
+const Carousel = ({ images }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+        if (!isHovered) {
+            setCurrentImageIndex((prevIndex) =>
+              prevIndex === (images.length - 3) - 1 ? 0 : prevIndex + 1
+            );
+          }
+    }, 3000); // Change the interval duration as needed
+
+    return () => clearInterval(intervalId);
+  }, [images.length, isHovered]);
+
+  const goToNext = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === (images.length - 3) - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const goToPrev = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? (images.length - 3) - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <>
-      <TECarousel showControls ride="carousel">
-        <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-          <TECarouselItem
-            itemID={1}
-            className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-          >
+    <div className="relative " onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+      <div className="overflow-hidden relative">
+        <div
+          className="flex transition-transform duration-500 ease-in-out "
+          style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+        >
+          {images.map((image, index) => (
             <img
-              src="https://rnd.iiti.ac.in/files_upload/slider/136dd9eff14a37a1b8e69623bc059902.jpg"
-              className="block w-full"
-              alt="..."
+              key={index}
+              src={image}
+              alt={`Slide ${index}`}
+              className="w-[80%] mx-auto"
             />
-          </TECarouselItem>
-          <TECarouselItem
-            itemID={2}
-            className="relative float-left hidden -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-          >
-            <img
-              src="https://rnd.iiti.ac.in/files_upload/slider/2b3f6da03863f0d1cd93ed887b91633a.jpg"
-              className="block w-full"
-              alt="..."
-            />
-          </TECarouselItem>
-          <TECarouselItem
-            itemID={3}
-            className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-          >
-            <img
-              src="https://rnd.iiti.ac.in/files_upload/slider/e8296167d96bd65f120480f6e18fad18.jpg"
-              className="block w-full"
-              alt="..."
-            />
-          </TECarouselItem>
+          ))}
         </div>
-      </TECarousel>
-    </>
+      </div>
+      <button
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-400 hover:bg-gray-600 bg-opacity-50 text-white w-[3rem] rounded-full"
+        onClick={goToPrev}
+      >
+       
+        <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          classname="w-[1rem] h-[1rem] "
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        </span>
+      </button>
+      <button
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-400 hover:bg-gray-600 bg-opacity-50 text-white w-[3rem] rounded-full"
+        onClick={goToNext}
+      >
+        <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          classname="w-[1rem] h-[1rem] "
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        </span>
+      </button>
+    </div>
   );
-}
+};
+
+export default Carousel;

@@ -1,56 +1,54 @@
 import React from 'react'
-import DropdownLinkButton from '../dropdown/homedropdown'
+
 import DropdownLinkButton2 from '../dropdown/facilitiesdropdown'
 import DropdownLinkButton3 from '../dropdown/Researchdropdown'
 import DropdownLinkButton4 from '../dropdown/projectsdropdown'
-
 import DropdownLinkButton6 from './../dropdown/patentsdropdown'
-
-
 
 
 const navbar = () => {
   return (
-    <nav className='sticky top-2 w-[98%] mx-auto h-16  bg-blue-500 mt-1  border-4 border-blue-900 rounded-2xl items-center z-10 '>
-      <ul className='flex flex-wrap flex-row  pt-0 text-lg max-lg:text-md'>
-        <li>
-          <a type="button" ><DropdownLinkButton /> </a>
-
-
-
+    <nav className='sticky top-0.5 w-full  bg-blue-700 z-[1] px-4 '>
+      <ul className='flex flex-wrap flex-row h-[100%] p-0 m-0'>
+        <li className='p-[1px] text-center'>
+          <div className=' p-4  hover:bg-white hover:text-blue-700  text-xl'><a href="/" >Home </a>
+          </div>
         </li>
-        <li>
-          <a href='/people' className=' hover:text-[aqua]'> People</a>
+        <li className='p-[1px] text-center'>
+          <div className='p-4 hover:bg-white hover:text-blue-700 text-xl '>
+          <a href='/people' > People</a>
+          </div>
         </li>
 
 
 
-        <li><a type="button" ><DropdownLinkButton2 />
+        <li className='p-[1px] text-center'><a type='button' ><DropdownLinkButton2 />
         </a>
 
 
         </li>
 
-        <li><a type="button" ><DropdownLinkButton3 />
+        <li className='p-[1px] text-center'><a type="button" ><DropdownLinkButton3 />
         </a>
 
         </li>
-        <li><a type="button" ><DropdownLinkButton4 />
-        </a>
-
-
-        </li>
-        <li><a href='/publications' className=' hover:text-[aqua] active:underline' >Publications
+        <li className='p-[1px] text-center'><a type="button" ><DropdownLinkButton4 />
         </a>
 
 
         </li>
-        <li><a type="button"><DropdownLinkButton6 />
+        <li className='p-[1px] text-center'>
+          <div className='p-4 hover:bg-white hover:text-blue-700 text-xl '>
+          <a href='/publications' > Publications</a>
+          </div>
+        </li>
+       
+        <li className='p-[1px] text-center'><a type="button"><DropdownLinkButton6 />
         </a>
         </li>
 
         {/* login button */}
-        <li><a className='absolute top-1.5 right-3 p-2 border-2 rounded-2xl hover:bg-white hover:text-blue-600 hover:border-blue-300 text-lg' href="/login" >Faculty Login</a></li>
+        <li><a className='absolute top-0.5 right-0.5 p-2 px-4 pt-4 h-[93%] hover:bg-white hover:text-blue-700 hover:border-blue-300 text-lg font-semibold' href="/login" >Faculty Login</a></li>
       </ul>
     </nav>
 

@@ -9,7 +9,7 @@ const Research1 = () => {
     const [designsRegistered,setDesignsRegistered] = useState('56')
 
   return (
-    <div className='relative my-10 border-2 border-black pb-10 bg-blue-200'>
+    <div className='relative my-10 border-2 border-black pb-10 bg-blue-100'>
         <div className='flex flex-col items-center'>
         <h1 className='text-6xl text-black font-bold mt-6'>Research metrics at a glance</h1>
         <h3 className='text-lg font-normal'>As of {date}</h3>
