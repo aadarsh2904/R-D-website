@@ -1,14 +1,15 @@
 .research-scheme-container {
-    max-width: 1600px;
+     max-width: 1600px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #eeeaea;
-    border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
+    /* padding: 20px; */
+    /* background-color: #eeeaea; */
+    /* border-radius: 30px; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);     */
   }
   
   .section-heading {
-    font-size: 3.5em;
+    font-family:"Poppins",san-seriff;
+    font-size: 3.8em;
     color: #0e116c;
     text-align: center;
     margin-bottom: 20px;
@@ -16,22 +17,22 @@
   
   .scheme-details p {
     font-size: 1.5em;
-    color: #666;
+    color: #000000;
     line-height: 1.5;
     margin-bottom: 15px;
   }
   
   .scheme-details ul {
     font-size: 1.5em;
-    color: #666;
+    color: #0f0303;
     list-style-type: disc;
     margin-left: 20px;
     margin-bottom: 15px;
-  }
+  }s
   
   .links-section h2 {
     font-size: 1.5em;
-    color: #666;
+    color: #000000;
     margin-top: 20px;
   }
   
@@ -44,14 +45,22 @@
     font-size: 1.5em;
     margin-bottom: 10px;
   }
+  .links-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
   
   .links-section a {
     text-decoration: none;
-    color: #313fde;
+    color: #2a39d5;
     font-weight: bold;
   }
   
   .links-section a:hover {
     text-decoration: underline;
+  }
+  .listcolor{
+    color: #000000;
+
   }
   
