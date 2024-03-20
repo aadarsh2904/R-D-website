@@ -8,7 +8,7 @@ import DropdownLinkButton6 from './../dropdown/patentsdropdown'
 
 const navbar = () => {
   return (
-    <nav className='sticky top-0.5 w-full  bg-blue-700 z-[1] px-4 '>
+    <nav className='sticky top-0.5 w-full  bg-blue-700 z-[10] px-4 '>
       <ul className='flex flex-wrap flex-row h-[100%] p-0 m-0'>
         <li className='p-[1px] text-center'>
           <div className=' p-4  hover:bg-white hover:text-blue-700  text-xl'><a href="/" >Home </a>
