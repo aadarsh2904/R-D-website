@@ -10,8 +10,9 @@
   .section-heading-Tech {
     max-width:none;
     font-weight: 520;
-    font-size: 3em;
+    font-size: 2em;
     color: #0e116c; 
     text-align:center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 20px;
   }
