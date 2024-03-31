@@ -11,9 +11,9 @@ const Prius = () => {
           To promote and support research and innovation based projects amongst undergraduate students, IIT Indore has started a new scheme through which it supports:
         </p>
         <ul className='text-black' style={{color:'black'}}>
-          <li>Undergraduate students in the research laboratories at IIT Indore,</li>
-          <li>Undergraduate students for international collaborative research projects, and</li>
-          <li>Encouraging projects leading to innovation by undergraduate students</li>
+          <li className='listcolor'>Undergraduate students in the research laboratories at IIT Indore,</li>
+          <li className='listcolor'>Undergraduate students for international collaborative research projects, and</li>
+          <li className='listcolor'>Encouraging projects leading to innovation by undergraduate students</li>
         </ul>
         <p>
           The scheme is applicable for undergraduate students enrolled at IIT Indore, and a part of the PRIUS project must be carried out at IIT Indore. For the implementation of this scheme, the student who wishes to pursue an undergraduate research project must identify a faculty supervisor from IIT Indore.
