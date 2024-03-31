@@ -10,6 +10,7 @@ import Chetan from './Teamimg/Chetan.jpeg'
 import Jitendra from './Teamimg/Jitendra.jpeg'
 import Amit from './Teamimg/Amit.jpeg'
 import Jayprakash from './Teamimg/Jayprakash.jpg'
+import Archana from './Teamimg/IMG_20230824_094941.jpg'
 
 
 export const CombinedData = [
@@ -131,6 +132,20 @@ export const CombinedData = [
       image_url: Jayprakash,
       role: 'Purchase'
     },
+
+    {
+        id: 14,
+        name: 'Dr. Archana Chaudhary',
+        position: 'Executive Officer',
+        phone : '+91-731-6603578',
+        email: 'eo-ctr [at] iiti.ac.in',
+        image_url:Archana,
+        role: 'Executive Officer'
+
+
+
+
+    }
     // Add more data from the Purchase array...
   ];
 
@@ -141,3 +156,7 @@ export const Purchase = CombinedData.filter(member => member.role === 'Purchase'
 export const People = CombinedData.filter(member => member.role === 'People');
 
 export const OFFICE = CombinedData.filter(member => member.role === 'OFFICE');
+
+export const Executive = CombinedData.filter(member => member.role === 'Executive Officer');
+
+

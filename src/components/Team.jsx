@@ -1,5 +1,5 @@
 import React from "react";
-import { OFFICE, Finance, People, Purchase } from "./data";
+import { OFFICE, Finance, People, Purchase, Executive, TranslationalResearch } from "./data";
 
 const TeamPage = () => {
   return (
@@ -69,6 +69,27 @@ const TeamPage = () => {
         <h1 className="flex justify-center items-center text-3xl mb-6 text-black font-bold" style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}>R&D Purchase</h1>
         <div className="flex flex-row flex-wrap justify-center items-center">
           {Purchase.map((val) => (
+            <div key={val.id} className="scale-95 relative w-[300px] overflow-hidden rounded-3xl shadow-lg group bg-white m-8 border border-gray-300 hover:border-blue-500">
+              <img className="object-cover w-full h-72 xl:h-80" src={val.image_url} alt="Team Member Name" />
+              <div className="absolute inset-0 px-6 py-4 text-center duration-300 opacity-0 group-hover:opacity-90 bg-opacity-90">
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-white to-gray-700 rounded-md"></div>
+                <div className="relative flex flex-col items-center justify-center w-full h-full ">
+                  <p className="mb-1 text-xl font-bold text-black">{val.name}</p>
+                  <p className="mb-1 text-lg font-bold text-black">{val.position}</p>
+                  <p className="mb-1 text-lg text-lightblue font-semibold"><span role="img" aria-label="mail">📧</span> E-mail: <span className="text-lightblue">{val.email}</span></p>
+                  <p className="mb-1 text-lg text-black font-semibold"><span role="img" aria-label="phone">📞</span> Phone: {val.phone}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Translational Research Section */}
+      <div className="flex flex-col justify-center items-center pb-18 mb-16">
+        <h1 className="flex justify-center items-center text-3xl mb-6 text-black font-bold" style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}>Centre for Translational Research</h1>
+        <div className="flex flex-row flex-wrap justify-center items-center">
+          {Executive.map((val) => (
             <div key={val.id} className="scale-95 relative w-[300px] overflow-hidden rounded-3xl shadow-lg group bg-white m-8 border border-gray-300 hover:border-blue-500">
               <img className="object-cover w-full h-72 xl:h-80" src={val.image_url} alt="Team Member Name" />
               <div className="absolute inset-0 px-6 py-4 text-center duration-300 opacity-0 group-hover:opacity-90 bg-opacity-90">
