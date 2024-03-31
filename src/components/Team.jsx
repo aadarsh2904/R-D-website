@@ -9,7 +9,7 @@ const TeamPage = () => {
         <h1 className="flex justify-center items-center text-3xl mb-6 mt-12 text-black font-bold" style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}>R&D OFFICE</h1>
         <div className="flex flex-row flex-wrap justify-center items-center">
           {OFFICE.map((val) => (
-            <div key={val.id} className="scale-95 relative w-[400px] overflow-hidden rounded-3xl shadow-lg group bg-white m-8">
+            <div key={val.id} className="scale-95 relative w-[375px] overflow-hidden rounded-3xl shadow-lg group bg-white m-8">
               <img className="object-cover w-full h-72 xl:h-80" src={val.image_url} alt="Team Member Name" />
               <div className="absolute inset-0 px-6 py-4 text-center duration-300 opacity-0 group-hover:opacity-100">
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-white opacity-60 to-gray-700 rounded-md"></div>
