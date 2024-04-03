@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Dean() {
   return (
-    <div id="about" className="relative ">
+    <div id="about" className="relative py-8 ">
       <div className="flex flex-row flex-wrap items-center p-4 w-[90%] mx-auto">
         <div className="flex flex-col text-2xl text-justify mx-auto font-light w-[40%] h-full p-0 m">
           <h1 className="text-5xl  font-bold text-blue-900 mb-[1rem]">

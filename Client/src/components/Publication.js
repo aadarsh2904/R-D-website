@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import { Table, Thead, Tbody, Tr, Th, Td, Box } from '@chakra-ui/react';
 import { Select, Flex, Stack } from '@chakra-ui/react';
 
-const data = [
-  { id: 1, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Journal', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
-  { id: 2, title: 'Patent Title 2', fundingagency: 'DRDO', year: '2022', publicationtype: 'Conference', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-  { id: 3, title: 'Patent Title 1', fundingagency: 'AICTE', year: '2021', publicationtype: 'Book', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' }
-];
 
 const Publication = () => {
+  const [data, setData] = useState([]);
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
@@ -17,6 +14,18 @@ const Publication = () => {
     facultyMember: '',
     department: '',
   });
+
+  useEffect(()=>{
+    const fetchData = async()=>{
+    try {
+      const res = await axios.get("http://localhost:5000/api/publications");
+       setData(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+    }
+    fetchData();
+  },[])
 
   useEffect(() => {
     setOriginalData(data);

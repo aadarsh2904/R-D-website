@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import {
   Table,
   Thead,
@@ -10,28 +11,36 @@ import {
 } from '@chakra-ui/react';
 import { Select, Flex, Stack } from '@chakra-ui/react';
 
-const data = [
-  { id: 1, title: 'Sandeep Choudhary, Tanmay Vyas, Abhijeet Joshi PORTABLE BIOSENSING SYSTEM AND METHOD FOR MILK, SPOILAGE AND ADULTERATION DETECTION, India, 202121023242, 2021', academicYear: '2021', patentStatus: 'Filed', facultyMember: 'Abhijeet Joshi', department: 'A' },
-  { id: 2, title: 'Manish Kumar Goyal, Jhilam sinha and Jew Das A METHOD FOR MEASURING HYDROLOGICAL RESILIENCE OF A REGION IN RESPONSE TO WARMING SHIFTS , India, 201921037336, 2021', academicYear: '2022-2023', patentStatus: 'Filed', facultyMember: 'Dr. Manish Kumar Goyal', department: 'B' },
-  { id: 3, title: 'Venkatesh, C., Dudhe, P., Krishnan, M. A., Sonawane, A., Method and system for metal-free solvent-free synthesis of fused-pyrido heterocycles and their biological activities against cancer and multi-drug resistant pathogens, India, 201921029311, 2021', academicYear: '2021', patentStatus: 'Granted', facultyMember: 'Venkatesh, C.', department: 'd' },
-  { id: 4, title: 'Suhel Khan, Srivathsan Vasudevan A SYSTEM FOR ACQUIRING REAL-TIME PHOTOACOUSTIC SIGNAL WITH HIGH-SPEED SIGNAL CONDITIONING AND METHOD THEREOF, India, 202221056741, 2022', academicYear: '2022', patentStatus: 'Filed', facultyMember: 'Suhel Khan', department: 'B2' },
-  { id: 5, title: 'Trilok Gupta, Sandeep Chaudhary, Ravi Kr Sharma, Sudhir Kr Jain Method of Preparation of Conplas Paver Block utilizing waste polythene, India, Application No. 202011002264A, 2022', academicYear: '2022', patentStatus: 'Published', facultyMember: 'Trilok Gupta', department: 'Civil Engineering' },
-  { id: 6, title: 'Vikas Vijayvargiya and Santosh Kumar Vishvakarma High Performance Double Gate Tunnel Field Effect Transistor For Low Power Applications, India, 201721000199, 2022', academicYear: '', patentStatus: 'Granted', facultyMember: 'Vikas Vijayvargiya', department: 'Electrical Engineering' },
-];
+
 
 const Patents = () => {
+
+  const [data,setdata] =useState([]);
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    academicYear: '',
     patentStatus: '',
     facultyMember: '',
     department: '',
   });
+  
+  useEffect(()=>{
+    const fetchData = async()=>{
+    try {
+      const res = await axios.get("http://localhost:5000/api/patents");
+       setdata(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+    }
+    
+    fetchData();
+  },[])
 
   useEffect(() => {
     setOriginalData(data);
     setFilteredData(data);
+    
   }, []);
 
   useEffect(() => {
@@ -51,6 +60,7 @@ const Patents = () => {
   };
 
   const handleFilterChange = (filterName, value) => {
+    
     setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
   };
 
@@ -59,7 +69,7 @@ const Patents = () => {
       <Box mt={20} mb={20}>
         <Stack spacing={8} px={4} py={8} alignItems="center">
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
-            <Select
+            {/* <Select
               variant="filled"
               value={filters.academicYear}
               onChange={(e) => handleFilterChange('academicYear', e.target.value)}
@@ -72,7 +82,7 @@ const Patents = () => {
             >
               <option value="2021">2021</option>
               <option value="2022">2022</option>
-            </Select>
+            </Select> */}
             <Select
               variant="filled"
               value={filters.patentStatus}

@@ -4,50 +4,49 @@ const Carousel = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-
   useEffect(() => {
     const intervalId = setInterval(() => {
-        if (!isHovered) {
-            setCurrentImageIndex((prevIndex) =>
-              prevIndex === (images.length - 3) - 1 ? 0 : prevIndex + 1
-            );
-          }
-    }, 3000); // Change the interval duration as needed
+      if (!isHovered) {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+      }
+    }, 2000); // Change the interval duration as needed
 
     return () => clearInterval(intervalId);
   }, [images.length, isHovered]);
 
   const goToNext = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === (images.length - 3) - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const goToPrev = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? (images.length - 3) - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   return (
-    <div className="relative " onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <div className="overflow-hidden relative">
-        <div
-          className="flex transition-transform duration-500 ease-in-out "
-          style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
-        >
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Slide ${index}`}
-              className="w-[80%] mx-auto"
-            />
-          ))}
-        </div>
+    <div
+      className="relative overflow-hidden w-full h-[100%] border-2 border-solid rounded-lg shadow-xl cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex transition-transform duration-500 ease-in-out h-full">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Slide ${index}`}
+            className={`w-full  ${index === currentImageIndex ? 'block' : 'hidden'}`}
+            style={{ minHeight: "100%", objectFit: "cover" }}
+          />
+        ))}
       </div>
       <button
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-400 hover:bg-gray-600 bg-opacity-50 text-white w-[3rem] rounded-full"
+        className="absolute top-[50%] left-4 transform -translate-y-1/2 bg-gray-400 hover:bg-gray-600 bg-opacity-50 text-white w-[3rem] rounded-full"
         onClick={goToPrev}
       >
        
@@ -67,7 +66,7 @@ const Carousel = ({ images }) => {
         </span>
       </button>
       <button
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-400 hover:bg-gray-600 bg-opacity-50 text-white w-[3rem] rounded-full"
+        className="absolute top-[50%] right-4 transform -translate-y-1/2 bg-gray-400 hover:bg-gray-600 bg-opacity-50 text-white w-[3rem] rounded-full"
         onClick={goToNext}
       >
         <span>
@@ -90,3 +89,4 @@ const Carousel = ({ images }) => {
 };
 
 export default Carousel;
+
