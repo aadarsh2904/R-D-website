@@ -31,8 +31,8 @@ export default function Footer() {
                     <div className='contact'>
                         <IoMailSharp className='contact-icon'/>
                         <div className='contact-link'>
-                            <a href="/mail"><p2>arrnd@iiti.ac.in</p2></a>
-                            <a href="/hii"><p2>rndsection@iiti.ac.in</p2></a>
+                            <p2>arrnd@iiti.ac.in</p2>
+                            <p2>rndsection@iiti.ac.in</p2>
                         </div>
                     </div>
 
