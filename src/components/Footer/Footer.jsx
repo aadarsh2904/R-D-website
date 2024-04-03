@@ -1,6 +1,12 @@
 import React from 'react';
 import './Footer.css';
 import {FaTwitter, FaInstagram, FaFacebook, FaPhone,FaHome,FaLinkedin } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faXTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {IoMailSharp} from 'react-icons/io5'
 export default function Footer() {
   return (
@@ -75,7 +81,7 @@ export default function Footer() {
                 </div>
 
                 <div className='my__footer-links_div'>
-                <div style={{ fontSize: '20px' , margin: '8px' , color:'rgb(7, 2, 109)',fontWeight: 'bold'}}>REACH US</div>
+                <div className="headings">REACH US</div>
                 <iframe className='border-2 rounded-xl w-[18rem] h-[12rem] ml-[-1rem]' id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=IIT%20Indore%20Simrol+(IIT%20Indore)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                         
 
@@ -85,12 +91,15 @@ export default function Footer() {
             <div className='my__footer-below'>
                 <div className='my__footer-below-links'>
 
-                <a href ="#"><FaInstagram className='ig'/></a>
-                <a href=""><FaTwitter className='tw'/></a>
-                <a href=""><FaFacebook className='fb'/></a>
                 <a href="https://www.linkedin.com/in/research-and-development-iit-indore-a37bb3299/">
-                    <FaLinkedin className='tw'/>
+                    <FaLinkedin className='in'/>
                 </a>
+                <a href ="" className='tw'><FontAwesomeIcon icon={faXTwitter} size="lg" /></a>
+                <a href =""><FaInstagram className='ig'/></a>
+                <a href=""><FaFacebook className='fb'/></a>
+                
+                
+                
 
                 </div>
             </div>

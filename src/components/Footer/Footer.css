@@ -36,7 +36,7 @@ h3,h4{
 .my__footer-links{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
@@ -123,8 +123,16 @@ hr{
 }
 
 
+.in{
+    background:#3f93cf;
+    height:30px;
+    width:30px;
+    margin:4px;
+    border-radius: 2px;
+    color:white;
+}
 .tw{
-    background:#3b97d3;
+    background:#060707;
     height:30px;
     width:30px;
     margin:4px;
@@ -132,7 +140,7 @@ hr{
     color:white;
 }
 .fb{
-    background:#3D5A98;
+    background:#2d64e4;
     height:30px;
     width:30px;
     margin:4px;
