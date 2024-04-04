@@ -15,20 +15,21 @@ import { Select, Flex, Stack } from '@chakra-ui/react';
 
 const Patents = () => {
 
-  const [data,setdata] =useState([]);
+  const [data,setData] =useState([]);
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
     patentStatus: '',
     facultyMember: '',
     department: '',
+    academicYear:'',
   });
   
   useEffect(()=>{
     const fetchData = async()=>{
     try {
       const res = await axios.get("http://localhost:5000/api/patents");
-       setdata(res.data)
+       setData(res.data)
     } catch (error) {
       console.log(error)
     }
@@ -41,7 +42,8 @@ const Patents = () => {
     setOriginalData(data);
     setFilteredData(data);
     
-  }, []);
+    
+  }, [data]);
 
   useEffect(() => {
     applyFilters();
@@ -69,7 +71,7 @@ const Patents = () => {
       <Box mt={20} mb={20}>
         <Stack spacing={8} px={4} py={8} alignItems="center">
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
-            {/* <Select
+            <Select
               variant="filled"
               value={filters.academicYear}
               onChange={(e) => handleFilterChange('academicYear', e.target.value)}
@@ -80,9 +82,9 @@ const Patents = () => {
               icon={<></>}
               bg='#cbd5e1'
             >
-              <option value="2021">2021</option>
-              <option value="2022">2022</option>
-            </Select> */}
+              <option value="2021-22">2021-22</option>
+              <option value="2022-23">2022-23</option>
+            </Select>
             <Select
               variant="filled"
               value={filters.patentStatus}

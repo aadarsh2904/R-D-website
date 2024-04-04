@@ -2,10 +2,11 @@ import React from "react";
 
 const DeanMessage = () => {
   return (
-    <div className="flex flex-row flex-wrap w-[85%] mx-auto p-4 my-6 pl-10 py-8">
+    <div className="w-full bg-gray-100 pb-20">
+    <div className="flex flex-row flex-wrap w-[85%] mx-auto p-4  py-8">
       <div className="w-[60%] mx-auto">
-        <h1 className="text-5xl font-bold text-center p-4 text-blue-900">
-          Dean`s message`
+        <h1 className="text-5xl font-bold  py-4 text-blue-900">
+          Dean(R&D)`s Message
         </h1>
         <p className="text-2xl text-justify ">
           Research and development have been integral to IIT Indore since its
@@ -27,13 +28,24 @@ const DeanMessage = () => {
           healthcare, sustainability, manufacturing, and robotics, facilitating
           technology transfer from IIT Indore to the market.
         </p>
+        <p className="text-xl text-start pt-2.5 ">
+           <b className="font-bold text-2xl">Prof. Palani Iyamperumal Anand</b> 
+            <br />
+           <i>Dean Research and Development
+            <br />
+             IIT Indore</i>
+          </p>
       </div>
-      <div className="w-[25%] mx-auto pt-[2rem]">
-        <img
-          src=""
-          className="h-[20rem] w-[75%] p-2 border-8 border-solid border-blue-800 shadow-2xl "
-        />
-      </div>
+      <div className="w-[20%] mx-auto flex flex-col items-end pt-8">
+          <hr className="inline-block w-[50%] border-4 border-solid border-blue-700 " />
+          <img
+            src={"dean.png"}
+            alt="Logo"
+            className="inline-block border-r-8 border-solid border-blue-700  mx-auto shadow-lg h-[20rem] w-[100%]"
+          />
+          <hr className="inline-block w-[50%] border-4 border-solid border-blue-700 " />
+        </div>
+    </div>
     </div>
   );
 };

@@ -2,6 +2,10 @@ import React from 'react';
 import './MyTable.css';  
 
 const MyTable = ({ data }) => {
+  if (!data) {
+    // Handle the case where data is undefined or null
+    return <p>No data available</p>;
+  }
 
   const headers = Object.keys(data[0]);
 

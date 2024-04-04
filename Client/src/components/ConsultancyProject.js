@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
 import { Select, Flex } from '@chakra-ui/react';
+import axios from 'axios'
 
-const data = [
-  { id: 1, title: 'USCL, 5TBD Project', fundingagency: 'AICTE', year: '2020-21', Status: 'Ongoing', facultyMember: 'Faculty 1', department: 'Computer Science', link: 'https://example.com/project1' },
-  { id: 2, title: 'Structural Audit for KV Dholpur', fundingagency: 'DRDO', year: '2020-21', Status: 'Tansfered', facultyMember: 'Faculty 2', department: 'Electrical Engineering', link: 'https://example.com/project2' },
-  // Add more consultancy data as needed
-];
 
 const ConsultancyProject = () => {
+  const [data,setData] = useState([]);
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
@@ -17,10 +14,22 @@ const ConsultancyProject = () => {
     department: '',
   });
 
+  useEffect(()=>{
+    const fetchData = async()=>{
+    try {
+      const res = await axios.get("http://localhost:5000/api/consultancy");
+       setData(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+    }
+    fetchData();
+  },[])
+
   useEffect(() => {
     setOriginalData(data);
     setFilteredData(data);
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     applyFilters();

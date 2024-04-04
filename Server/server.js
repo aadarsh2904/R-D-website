@@ -34,6 +34,22 @@ app.get('/api/techtransfer', (req, res) => {
  })
 })
 
+app.get('/api/sponsored', (req, res) => {
+ const q = "SELECT * FROM sponsered_projects";
+ db.query(q,(err,data)=>{
+    if(err) return res.json(err)
+    return res.json(data)
+ })
+})
+
+app.get('/api/consultancy', (req, res) => {
+ const q = "SELECT * FROM consultancy";
+ db.query(q,(err,data)=>{
+    if(err) return res.json(err)
+    return res.json(data)
+ })
+})
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })

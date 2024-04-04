@@ -3,10 +3,10 @@ import React from "react";
 import Header from "../components/Header.jsx";
 import Display from "../components/display.jsx";
 import Navbar from "../components/navbar.jsx";
-import Expensenew from "../components/Expensenew.jsx";
+import DirectorMessage from "../components/DirectorMessage.jsx";
 import DeanMesssage from "../components/DeanMessage.jsx";
-import Dean from "../components/Dean/Dean.jsx";
 import Research from "../components/Research.jsx";
+import Link from "../components/linkhome.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 
 const Home = () => {
@@ -15,10 +15,10 @@ const Home = () => {
       <Header />
       <Navbar />
       <Display />
-      <Research />
-      <Dean />
-      <Expensenew />
+      <DirectorMessage />
       <DeanMesssage />
+      <Research />
+      <Link/>
       <Footer />
     </div>
   );
