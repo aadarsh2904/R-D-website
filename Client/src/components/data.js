@@ -73,7 +73,7 @@ export const CombinedData = [
       name: 'Prof. Trapti Jain',
       position: 'Associate Dean-I, R&D',
       email: 'adord1 [at] iiti.ac.in',
-      phone: '+91 73738273927',
+      phone: '+91-731-6603587',
       image_url: TraptiJain,
       role: 'OFFICE'
     },

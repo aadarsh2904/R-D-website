@@ -1,7 +1,9 @@
 import React from 'react';
 import MyTable from './MyTable';
 
+// Functional component for Continuing Education Programme (CEP)
 const Cep = () => {
+  // Sample JSON data representing CEP details
   const jsonData = [
     { SNo: 1, Period: '19-23 November 2012', Particulars: 'Advances in Gear Engineering' },
     { SNo: 2, Period: '22-23 February 2013', Particulars: 'Workshop on Modern Spectroscopic Techniques' },
@@ -36,12 +38,13 @@ const Cep = () => {
   ];
   return (
   <div className="mx-auto p-8 lg:max-w-15xl">
+      {/* Heading */}
       <h1 className="text-4xl text-center text-blue-900 mb-8">Continuing Education Programme (CEP)</h1>
-
+      {/* Description */}
       <div className="text-lg text-gray-800 max-w-8xl mx-auto mb-8">
         IIT Indore has organized several Continuing Education Programmes (CEPs) and Short Courses for working professionals in industry, institutions and universities across India, to enable them to update their knowledge and skills, and also to train them in state-of-the-art facilities. The details of CEPs organized at IIT Indore are listed below:
       </div>
-
+      {/* Displaying CEP details using MyTable component */}
       <div className="mt-8">
         <MyTable className='text-lg' data={jsonData} />
       </div>
