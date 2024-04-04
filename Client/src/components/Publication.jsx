@@ -28,9 +28,11 @@ const Publication = () => {
   },[])
 
   useEffect(() => {
+    
     setOriginalData(data);
     setFilteredData(data);
-  }, []);
+   
+  }, [data]);
 
   useEffect(() => {
     applyFilters();

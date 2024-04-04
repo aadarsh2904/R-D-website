@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, Box } from '@chakra-ui/react';
 import { Select, Flex, Stack } from '@chakra-ui/react';
+import axios from 'axios';
 
-const data = [
-  { id: 1, title: "Phase I/II Clinical trial of a novel asparaginase mutant for the treatment of primary and relapse acute lymphatic leukemia", Status: "ongoing", department: 'Biosciences and Biomedical Engineering' },
-  { id: 2, title: "J P Narayan National Centre of Excellence in the Humanities", Status: "ongoing", department: 'Humanities', fundingagency: 'Department of Higher Education (MHRD)' },
-  { id: 3, title: "FIST PROGRAM OF DST- ELECTRICAL ENGINEERING: Smart Grid Research Facility", Status: "ongoing", department: 'Electrical Engineering', facultyMember: 'Amod C. Umarikar', fundingagency: 'Department of Science and Technology' },
-  { id: 4, title: "Study of Legendre and Related Functions", Status: "completed", department: 'Mathematics', fundingagency: 'Science & Engineering Research Board (SERB)' },
-  { id: 5, title: "Advanced Nonlinear Filtering Using Improved Quadrature Rule", Status: "ongoing", facultyMember:'Abhinoy Kumar Singh', fundingagency: 'Science & Engineering Research Board (SERB)' },
-];
+
 
 const Sponsoredproject = () => {
+  const [data,setData] = useState([])
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
@@ -21,10 +17,22 @@ const Sponsoredproject = () => {
     Status: '',
   });
 
+  useEffect(()=>{
+    const fetchData = async()=>{
+    try {
+      const res = await axios.get("http://localhost:5000/api/sponsored");
+       setData(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+    }
+    fetchData();
+  },[])
+
   useEffect(() => {
     setOriginalData(data);
     setFilteredData(data);
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     applyFilters();
