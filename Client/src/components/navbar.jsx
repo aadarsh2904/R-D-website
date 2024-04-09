@@ -6,8 +6,11 @@ import DropdownLinkButton4 from "../dropdown/projectsdropdown";
 import DropdownLinkButton6 from "./../dropdown/patentsdropdown";
 
 const navbar = () => {
+  const handleLogin = ()=>{
+    window.location.href = '/login';
+  }
   return (
-    <nav className="sticky top-0.5 w-full  bg-blue-700 z-[10] px-4 ">
+    <nav className="sticky top-0 w-full bg-blue-700 z-[10] px-4 ">
       <ul className="flex flex-wrap flex-row h-[100%] p-0 m-0 text-white ">
         <li className="p-[1px] text-center">
           <div className=" p-4  hover:bg-white hover:text-blue-700  text-xl">
@@ -49,13 +52,14 @@ const navbar = () => {
         </li>
 
         {/* login button */}
-        <li>
-          <a
-            className="absolute top-0.5 right-0.5 p-2 px-4 pt-4 h-[93%] hover:bg-white hover:text-blue-700 hover:border-blue-300 text-lg font-semibold"
+        <li className="p-0">
+          <button
+            onClick={handleLogin}
+            className="absolute top-0 right-0 p-4 px-5 pt-3.5 h-[100%] text-xl font-bold bg-blue-900  hover:bg-white hover:text-blue-800 hover:border-2 hover:border-blue-800 "
             href="/login"
           >
             Faculty Login
-          </a>
+          </button>
         </li>
       </ul>
     </nav>

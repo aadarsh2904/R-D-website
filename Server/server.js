@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.json("Hello");
+  res.json("Hello, this is IIT Indore Research and Development website`s Backend Server");
 })
 app.get('/api/patents', (req, res) => {
  const q = "SELECT * FROM patents";

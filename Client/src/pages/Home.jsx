@@ -15,9 +15,9 @@ const Home = () => {
       <Header />
       <Navbar />
       <Display />
+      <Research />
       <DirectorMessage />
       <DeanMesssage />
-      <Research />
       <Link/>
       <Footer />
     </div>

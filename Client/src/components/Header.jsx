@@ -18,8 +18,8 @@ const navbar = () => {
             />
 
             <div className='relative pl-2 w-60% '>
-              <p className=' text-3xl font-semibold  '>  अनुसंधान एवं विकास अनुभाग, भारतीय प्रौद्योगिकी संस्थान इंदौर</p>
-              <p className=' text-2xl   '> Research & Development Section, Indian Institute of Technology Indore</p>
+              <p className=' text-3xl font-semibold  '>  अनुसंधान एवं विकास, भारतीय प्रौद्योगिकी संस्थान इंदौर</p>
+              <p className=' text-2xl   '> Research & Development, Indian Institute of Technology Indore</p>
             </div>
 {/* 
             <button className='bg-blue-700 p-2.5 border-2 border-blue-800 rounded-lg ml-[40rem] text-lg text-white font-semibold hover:bg-white hover:text-blue-700 hover:ring-2 '>

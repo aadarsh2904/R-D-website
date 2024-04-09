@@ -37,12 +37,12 @@ const Research = () => {
   };
 
   return (
-    <div className="relative  border-2 border-black pb-14  bg-[url('POD1.jpg')] bg-no-repeat  bg-cover bg-center">
+    <div className="relative  border-2 border-black pb-14 mt-12  bg-[url('POD1.jpg')] bg-no-repeat  bg-cover bg-center">
       <div className="flex flex-col items-center">
-        <h1 className="text-6xl text-white font-bold mt-8">
+        <h1 className="text-7xl text-white font-bold mt-8">
           Research metrics at a glance
         </h1>
-        <h3 className="text-lg font-normal text-white my-2">As of {date}</h3>
+        <h3 className="text-xl font-normal text-white my-2">As of {date}</h3>
         <hr className="w-[90%] border-2 rounded-lg my-6" />
         <div className="flex flex-row flex-wrap w-[80%] mx-auto ">
           <div className="flex flex-col w-[40%] items-center mx-auto">
