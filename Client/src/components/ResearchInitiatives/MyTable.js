@@ -7,7 +7,7 @@ const MyTable = ({ data }) => {
     return <p>No data available</p>;
   }
 
-  const headers = Object.keys(data[0]);
+  const headers = Object.keys(data[1]);
 
   return (
     <table className="my-table">

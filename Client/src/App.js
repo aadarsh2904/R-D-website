@@ -11,6 +11,7 @@ import Sponsored from './pages/sponsered';
 import Consultancy from './pages/consultancy';
 import Publication from './pages/publication';
 import Tech_Transfer from './pages/tech transfer'
+import Notifications from './pages/notification archive'
 import Cep from './pages/cep';
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/patent" element={<Patent/>}></Route>
         <Route path="/publications" element={<Publication/>}></Route>
         <Route path="/Tech_transfer" element={<Tech_Transfer/>}></Route>
+        <Route path="/notification" element={<Notifications/>}></Route>
         
 
         

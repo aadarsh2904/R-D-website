@@ -1,5 +1,5 @@
 import React from "react";
-import { OFFICE, Finance, People, Purchase, Executive, TranslationalResearch } from "./data";
+import { OFFICE, Finance, People, Purchase, Executive, TranslationalResearch } from "../components/data";
 
 const TeamPage = () => {
   return (

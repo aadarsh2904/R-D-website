@@ -3,14 +3,12 @@ import './Footer.css';
 import {FaTwitter, FaInstagram, FaFacebook, FaPhone,FaHome,FaLinkedin } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faXTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons';
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {IoMailSharp} from 'react-icons/io5'
 export default function Footer() {
   return (
-    <footer className='relative bottom-0'>
+    <footer className='relative bottom-0 mt-12'>
     <div className='Footer'>
         <div className='my__footer padding'>
             <div className='footer-heading'>Office of Research and Development</div>

@@ -13,11 +13,11 @@ const Home = () => {
   return (
     <div className="bg-white">
       <Header />
-      <Navbar />
+      <Navbar className="" />
       <Display />
+      <Research />
       <DirectorMessage />
       <DeanMesssage />
-      <Research />
       <Link/>
       <Footer />
     </div>
