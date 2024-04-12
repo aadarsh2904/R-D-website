@@ -3,9 +3,9 @@ import React from "react";
 const DeanMessage = () => {
   return (
     <div className="w-full bg-gray-100 pb-20">
-    <div className="flex flex-row flex-wrap w-[85%] mx-auto p-4  py-8">
-      <div className="w-[60%] mx-auto">
-        <h1 className="text-5xl font-bold  py-4 text-blue-900">
+    <div className="flex flex-row flex-wrap-reverse w-[85%] mx-auto p-4  py-8">
+      <div className="w-[60%] mx-auto max-[1292px]:w-[75%] max-md:w-[85%]">
+        <h1 className="text-5xl font-bold  py-4 text-blue-900 max-[840px]:text-4xl">
           Dean(R&D)`s Message
         </h1>
         <p className="text-2xl text-justify ">
@@ -36,7 +36,7 @@ const DeanMessage = () => {
              IIT Indore</i>
           </p>
       </div>
-      <div className="w-[20%] mx-auto flex flex-col items-end pt-8">
+      <div className="w-[20%] min-w-[20rem] mx-auto flex flex-col items-end p-6">
           <hr className="inline-block w-[50%] border-4 border-solid border-blue-700 " />
           <img
             src={"dean.png"}

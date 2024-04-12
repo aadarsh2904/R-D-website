@@ -3,9 +3,9 @@ import React from "react";
 export default function DropdownLinkButton4() {
   return (
     <div className="flex flex-col items-center overflow-hidden hover:overflow-visible cursor-pointer h-[3.8rem] pt-0 mt-0  hover:bg-white hover:text-blue-700 ">
-      <div className="h-[100%] text-center text-xl p-4 px-6 ">
-        <p className="text-center inline-block">Projects</p>
-        <span className=" ml-2 [&>svg]:w-6 w-2 inline-block [&>svg]:text-center ">
+      <div className="h-[100%] text-center  p-4  mb-[1px] flex flex-row">
+        <p className="textr inline">Projects</p>
+        <span className="inline-block [&>svg]:w-6 ml-1   ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -20,7 +20,7 @@ export default function DropdownLinkButton4() {
         </span>
       </div>
       <hr classname="w-full " />
-      <div className="flex flex-col items-center bg-white w-full divide-y divide-dotted shadow-xl">
+      <div className="flex flex-col items-center bg-white w-full divide-y divide-dotted shadow-xl text-lg">
         <a
           href="/projects/sponsored"
           className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200"

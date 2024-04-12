@@ -12,11 +12,11 @@ export default function display(){
   ];
 
   return (
-    <div className="flex flex-row flex-wrap">
-    <div className=" mt-4 w-[55%] h-[40rem] ml-4 p-2">
+    <div className="flex flex-row flex-wrap ">
+    <div className=" mt-4 min-w-[55%] max-w-[98vw] min-h-[50vh] max-h-[70vh] p-2 mx-auto">
       <Carousel images={images} />
     </div>
-    <div className="w-[38%] mx-auto"><Notification/></div>
+    <div className="min-w-[38%] mx-auto mb-12 px-4 "><Notification/></div>
     </div>
   );
 };

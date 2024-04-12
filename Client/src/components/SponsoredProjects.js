@@ -10,11 +10,11 @@ const Sponsoredproject = () => {
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    fundingagency: '',
-    year: '',
+    Status: '',
     facultyMember: '',
     department: '',
-    Status: '',
+    year: '',
+    fundingagency: '',
   });
 
   useEffect(()=>{
@@ -141,7 +141,7 @@ const Sponsoredproject = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {filters.fundingagency || filters.Status || filters.facultyMember || filters.department
+          {filters.Status  || filters.facultyMember || filters.department || filters.fundingagency
             ? filteredData.map((item, index) => (
               <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
                 <Td>{index + 1}</Td>

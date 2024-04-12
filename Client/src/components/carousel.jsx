@@ -30,7 +30,7 @@ const Carousel = ({ images }) => {
 
   return (
     <div
-      className="relative overflow-hidden w-full h-[100%] border-2 border-solid rounded-lg shadow-xl cursor-pointer"
+      className="relative overflow-hidden w-[98%] h-[100%] border-2 border-solid rounded-lg shadow-xl cursor-pointer mx-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

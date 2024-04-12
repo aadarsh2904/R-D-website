@@ -2,10 +2,10 @@ import React from "react";
 
 export default function DropdownLinkButton2() {
   return (
-    <div className="flex flex-col items-center overflow-hidden hover:overflow-visible cursor-pointer h-[3.8rem] pt-0 mt-0 hover:bg-white hover:text-blue-700">
-      <div className="h-[100%] text-center text-xl p-4   ">
-        <p className="text-center inline-block">Facilities & Opportunities</p>
-        <span className=" ml-2 [&>svg]:w-6 w-2 inline-block  ">
+    <div className="flex flex-col items-center overflow-hidden hover:overflow-visible cursor-pointer h-[3.8rem] pt-0 mt-0  hover:bg-white hover:text-blue-700 ">
+      <div className="h-[100%] text-center p-4 mb-[1px] flex flex-row  ">
+        <p className=" inline ">Facilities & Opportunities</p>
+        <span className="inline-block [&>svg]:w-6 ml-1  ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -19,8 +19,8 @@ export default function DropdownLinkButton2() {
           </svg>
         </span>
       </div>
-      <hr classname="w-full " />
-      <div className="flex flex-col items-center  bg-white w-full divide-y divide-dotted shadow-xl  ">   
+      <hr classname="w-full" />
+      <div className="flex flex-col items-center  bg-white w-full divide-y divide-dotted shadow-xl text-lg  ">   
       <a href="https://sic.iiti.ac.in/" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">SIC</a>
       <a href="/prius" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">PRIUS</a>
       <a href="/cep" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">CEP</a>

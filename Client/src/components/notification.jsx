@@ -1,6 +1,9 @@
 import React from "react";
 
 const notification = () => {
+  const handleArchive = ()=>{
+    window.location.href = '/notification'
+  }
   return (
     <div>
       <div className="w-full border-2 border-solid border-blue-700 h-full rounded-lg shadow-xl drop-shadow-lg mt-6 ">
@@ -8,7 +11,7 @@ const notification = () => {
           Notifications
         </h1>
         <hr className="w-full border-[1px] border-solid border-blue-700" />
-        <div className="h-[56.5vh] w-full overflow-y-scroll ">
+        <div className="max-h-[55vh] w-full overflow-y-scroll ">
           <ul className="pl-4 pt-4 pb-2 text-xl font-semibold text-gray-700">
             <li className="p-3">
               <span className="inline-block w-3 h-3 rounded-full bg-black mr-3"></span>
@@ -126,7 +129,7 @@ const notification = () => {
         </div>
       </div>
       <button
-
+       onClick={handleArchive}
         className="absolute right-12 m-3 p-1 pb-3 px-4 bg-blue-700 text-white font-bold text-lg border-2 rounded-lg hover:bg-white hover:text-blue-700 hover:border-blue-700"
       >
         <span className="w-8 h-8 inline-block pt-3 pr-2">

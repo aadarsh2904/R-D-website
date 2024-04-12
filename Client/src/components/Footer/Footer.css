@@ -1,5 +1,5 @@
 .padding{
-    padding:4rem 4rem;
+    padding:2rem 4rem;
 }
 *{
     font-family:inherit;
@@ -11,7 +11,8 @@ h1{
 }
 .footer-heading {  /*  for RND Heading */
     display: flex;
-    font-size: 30px; 
+    margin-bottom: 1rem;
+    font-size: 40px; 
     align-items: center;
     justify-content: center;
     color: rgb(10, 4, 91);
