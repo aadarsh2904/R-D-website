@@ -14,7 +14,8 @@ const Publication = () => {
     facultyMember: '',
     department: '',
   });
-
+ 
+  console.log(data)
   useEffect(()=>{
     const fetchData = async()=>{
     try {

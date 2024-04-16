@@ -21,10 +21,10 @@ export default function DropdownLinkButton3() {
       </div>
         <hr classname="w-full " />
       <div className="flex flex-col items-center bg-white w-full divide-y divide-dotted shadow-xl text-lg">
-      <a href="#" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200"> TRF</a>   
-      <a href="#" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">YFRSG</a>   
-      <a href="#" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">SIPPT</a>
-      <a href="https://www.iiti.ac.in/page/institute-mous" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">MOUs</a>
+      <a href="#" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200"> TRF</a>   
+      <a href="#" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200">YFRSG</a>   
+      <a href="#" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200">SIPPT</a>
+      <a href="https://www.iiti.ac.in/page/institute-mous" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200">MOUs</a>
       </div>
     </div>
   );

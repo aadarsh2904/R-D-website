@@ -23,19 +23,19 @@ export default function DropdownLinkButton4() {
       <div className="flex flex-col items-center bg-white w-full divide-y divide-dotted shadow-xl text-lg">
         <a
           href="/projects/sponsored"
-          className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200"
+          className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200"
         >
           Sponsored
         </a>
         <a
           href="/projects/consultancy"
-          className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200"
+          className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200"
         >
           Consultancy
         </a>
         <a
           href="#"
-          className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200"
+          className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200"
         >
           CSR
         </a>

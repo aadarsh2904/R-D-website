@@ -18,7 +18,7 @@ function Expensenew() {
           <h1 className="text-5xl font-bold py-4 text-blue-900 max-[840px]:text-4xl">
             Director`s Message
           </h1>
-          <p className="text-2xl text-justify ">
+          <p className="text-2xl text-justify max-md:text-xl">
             Happy to present the latest compilation of technologies developed by
             IIT Indore professors and students, showcasing years of scientific
             research. Some are market-ready, others need specialized support for

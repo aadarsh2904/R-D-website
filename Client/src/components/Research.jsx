@@ -1,13 +1,23 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import axios from "axios"
 
 const Research = () => {
-  const [date, setDate] = useState("02/04/2024");
-  const [patentsFiled, setPatentsFiled] = useState("245");
-  const [patentsRegistered, setPatentsRegistered] = useState("567");
-  const [designsFiled, setDesignsFiled] = useState("24");
-  const [designsRegistered, setDesignsRegistered] = useState("56");
+  const [data, setData] = useState({});
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/researchmetrics");
+        setData(res.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+  
+  
   const CountUpAnimation = ({ initialValue, targetValue }) => {
     const [count, setCount] = useState(initialValue);
     const duration = 1000;
@@ -42,7 +52,7 @@ const Research = () => {
         <h1 className="text-7xl text-white text-center font-bold mt-8 max-md:text-6xl max-sm:text-5xl px-1 w-full">
           Research metrics at a glance
         </h1>
-        <h3 className="text-xl font-normal text-white my-2">As of {date}</h3>
+        <h3 className="text-xl font-normal text-white my-2">As of {data.date}</h3>
         <hr className="w-[90%] border-2 rounded-lg my-6" />
         <div className="flex flex-row flex-wrap w-[80%] mx-auto">
           <div className="flex flex-col w-[40%] items-center mx-auto  min-w-[20rem]">
@@ -57,7 +67,7 @@ const Research = () => {
                 <span className="font-bold text-white text-5xl ">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={patentsFiled}
+                    targetValue={data.patentsFiled}
                   />
                 </span>{" "}
               </div>
@@ -70,7 +80,7 @@ const Research = () => {
                 <span className="font-bold text-white text-5xl">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={patentsRegistered}
+                    targetValue={data.patentsRegistered}
                   />
                 </span>
               </div>
@@ -90,7 +100,7 @@ const Research = () => {
                 <span className="font-bold text-white  text-5xl">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={designsFiled}
+                    targetValue={data.designsFiled}
                   />
                 </span>
               </div>
@@ -103,7 +113,7 @@ const Research = () => {
                 <span className="font-bold text-white text-5xl">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={designsRegistered}
+                    targetValue={data.designsRegistered}
                   />
                 </span>
               </div>
@@ -125,7 +135,7 @@ const Research = () => {
                 <span className="font-bold text-white text-5xl">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={patentsFiled}
+                    targetValue={data.copyrightsFiled}
                   />
                 </span>
               </div>
@@ -138,7 +148,7 @@ const Research = () => {
                 <span className="font-bold text-white  text-5xl">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={patentsRegistered}
+                    targetValue={data.copyrightsRegistered}
                   />
                 </span>
               </div>
@@ -158,7 +168,7 @@ const Research = () => {
                 <span className="font-bold text-white  text-5xl">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={designsFiled}
+                    targetValue={data.trademarksFiled}
                   />
                 </span>
               </div>
@@ -170,7 +180,7 @@ const Research = () => {
                 <span className="font-bold text-white  text-5xl">
                   <CountUpAnimation
                     initialValue={0}
-                    targetValue={designsRegistered}
+                    targetValue={data.trademarksRegistered}
                   />{" "}
                 </span>{" "}
               </div>
@@ -183,7 +193,7 @@ const Research = () => {
             Projects
           </h1>
           <p className="font-thin text-blue-100 my-2 text-xl max-md:text-lg">
-            Cumulative projects as of {date}
+            Cumulative projects as of {data.date}
           </p>
           <div className="grid grid-cols-7 gap-8 mt-2 max-md:hidden">
             <div className="col-start-2 text-center text-3xl max-[1180px]:text-lg font-semibold text-white ">
@@ -210,27 +220,27 @@ const Research = () => {
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={456} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsAid} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={56} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsInternal} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={123} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsSponsored} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={98} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsConsultancy} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={74} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsOthers} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={678} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsTotal} />
             </div>
 
             <div className=" text-center text-3xl max-[1180px]:text-lg font-semibold text-white">
@@ -238,27 +248,27 @@ const Research = () => {
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={45.2} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueAid} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={56.23} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueInternal} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white ">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={12.9} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueSponsored} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={98.04} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueConsultancy} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={74.56} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueOthers} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={600} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueTotal} />
             </div>
           </div>
           {/* Till medium screen this will be displayed  */}
@@ -274,11 +284,11 @@ const Research = () => {
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={456} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsAid} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={45.2} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueAid} />
             </div>
             <div className=" text-center text-3xl max-[1180px]:text-lg font-semibold text-white">
               Internal
@@ -286,22 +296,22 @@ const Research = () => {
 
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={56} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsInternal} />
             </div>
               <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
                 {" "}
-                <CountUpAnimation initialValue={0} targetValue={56.23} />
+                <CountUpAnimation initialValue={0} targetValue={data.valueInternal} />
               </div>
             <div className=" text-center text-3xl max-[1180px]:text-lg font-semibold text-white">
               Sponsered
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={123} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsSponsored} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white ">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={12.9} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueSponsored} />
             </div>
             <div className=" text-center text-3xl max-[1180px]:text-lg font-semibold text-white">
               Consultancy
@@ -309,22 +319,22 @@ const Research = () => {
 
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={123} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsConsultancy} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={98.04} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueConsultancy} />
             </div>
             <div className=" text-center text-3xl max-[1180px]:text-lg font-semibold text-white">
               Others
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={98} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsOthers} />
             </div>
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={600} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueOthers} />
             </div>
             <div className=" text-center text-3xl max-[1180px]:text-lg font-semibold text-white">
               Total
@@ -332,12 +342,12 @@ const Research = () => {
 
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={678} />
+              <CountUpAnimation initialValue={0} targetValue={data.projectsTotal} />
             </div>
 
             <div className=" text-center text-4xl max-[1180px]:text-2xl font-bold text-white">
               {" "}
-              <CountUpAnimation initialValue={0} targetValue={74.56} />
+              <CountUpAnimation initialValue={0} targetValue={data.valueTotal} />
             </div>
           </div>
         </div>
@@ -348,7 +358,7 @@ const Research = () => {
           </h1>
           <div className="text-5xl font-bold text-white mt-2 max-md:text-4xl max-sm:text-3xl">
             {" "}
-            <CountUpAnimation initialValue={0} targetValue={698} />
+            <CountUpAnimation initialValue={0} targetValue={data.publications} />
           </div>
         </div>
       </div>

@@ -50,6 +50,30 @@ app.get('/api/consultancy', (req, res) => {
  })
 })
 
+app.get('/api/notification', (req, res) => {
+ const q = "SELECT * FROM notifications ORDER BY id DESC LIMIT 10 ";
+ db.query(q,(err,data)=>{
+    if(err) return res.json(err)
+    return res.json(data)
+ })
+})
+
+app.get('/api/notificationpage', (req, res) => {
+ const q = "SELECT * FROM notifications ORDER BY id DESC";
+ db.query(q,(err,data)=>{
+    if(err) return res.json(err)
+    return res.json(data)
+ })
+})
+
+app.get('/api/researchmetrics', (req, res) => {
+ const q = "SELECT * FROM researchmetrics LIMIT 1";
+ db.query(q,(err,data)=>{
+    if(err) return res.json(err)
+    return res.json(data)
+ })
+})
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })

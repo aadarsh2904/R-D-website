@@ -21,9 +21,9 @@ export default function DropdownLinkButton2() {
       </div>
       <hr classname="w-full" />
       <div className="flex flex-col items-center  bg-white w-full divide-y divide-dotted shadow-xl text-lg  ">   
-      <a href="https://sic.iiti.ac.in/" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">SIC</a>
-      <a href="/prius" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">PRIUS</a>
-      <a href="/cep" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">CEP</a>
+      <a href="https://sic.iiti.ac.in/" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200">SIC</a>
+      <a href="/prius" className=" text-black py-3 hover:text-blue-700 w-full hover:bg-blue-200">PRIUS</a>
+      <a href="/cep" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200">CEP</a>
       </div>
     </div>
   );
