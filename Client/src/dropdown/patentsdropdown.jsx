@@ -21,8 +21,8 @@ export default function DropdownLinkButton6() {
       </div>
         <hr classname="w-full " />
       <div className="flex flex-col items-center bg-white w-full divide-y divide-dotted shadow-xl text-lg">
-      <a href="/patent" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">Patents</a>
-      <a href="/Tech_transfer" className=" text-black py-3 font-semibold hover:text-blue-700 w-full hover:bg-blue-200">Tech Transfer</a>
+      <a href="/patent" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200">Patents</a>
+      <a href="/Tech_transfer" className=" text-black py-3  hover:text-blue-700 w-full hover:bg-blue-200">Tech Transfer</a>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const Sponsoredproject = () => {
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    Status: '',
+    status: '',
     facultyMember: '',
     department: '',
     year: '',
@@ -28,7 +28,7 @@ const Sponsoredproject = () => {
     }
     fetchData();
   },[])
-
+ console.log(data)
   useEffect(() => {
     setOriginalData(data);
     setFilteredData(data);
@@ -79,8 +79,8 @@ const Sponsoredproject = () => {
 
             <Select
               variant="filled"
-              value={filters.Status}
-              onChange={(e) => handleFilterChange('Status', e.target.value)}
+              value={filters.status}
+              onChange={(e) => handleFilterChange('status', e.target.value)}
               placeholder="Select Status"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
@@ -141,19 +141,19 @@ const Sponsoredproject = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {filters.Status  || filters.facultyMember || filters.department || filters.fundingagency
+          {filters.status  || filters.facultyMember || filters.department || filters.fundingagency
             ? filteredData.map((item, index) => (
               <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
                 <Td>{index + 1}</Td>
                 <Td>{item.title}</Td>
-                <Td>{item.Status}</Td>
+                <Td>{item.status}</Td>
               </Tr>
             ))
             : originalData.map((item, index) => (
               <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
                 <Td>{index + 1}</Td>
                 <Td>{item.title}</Td>
-                <Td>{item.Status}</Td>
+                <Td>{item.status}</Td>
               </Tr>
             ))}
         </Tbody>

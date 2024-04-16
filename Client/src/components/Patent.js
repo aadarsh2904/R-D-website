@@ -19,10 +19,10 @@ const Patents = () => {
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    patentStatus: '',
+   Status: '',
     facultyMember: '',
     department: '',
-    academicYear:'',
+    year:'',
   });
   
   useEffect(()=>{
@@ -73,8 +73,8 @@ const Patents = () => {
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
             <Select
               variant="filled"
-              value={filters.academicYear}
-              onChange={(e) => handleFilterChange('academicYear', e.target.value)}
+              value={filters.year}
+              onChange={(e) => handleFilterChange('year', e.target.value)}
               placeholder="Select Academic Year"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
@@ -87,8 +87,8 @@ const Patents = () => {
             </Select>
             <Select
               variant="filled"
-              value={filters.patentStatus}
-              onChange={(e) => handleFilterChange('patentStatus', e.target.value)}
+              value={filters.Status}
+              onChange={(e) => handleFilterChange('Status', e.target.value)}
               placeholder="Select Patent Status"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
@@ -141,13 +141,13 @@ const Patents = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {filters.academicYear || filters.patentStatus || filters.facultyMember || filters.department
+          {filters.year || filters.Status || filters.facultyMember || filters.department
             ? filteredData.map((item, index) => (
                 <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
                   <Td>{index + 1}</Td>
                   <Td>{item.facultyMember}</Td>
                   <Td>{item.title}</Td>
-                  <Td>{item.patentStatus}</Td>
+                  <Td>{item.Status}</Td>
                 </Tr>
               ))
             : originalData.map((item, index) => (
@@ -155,7 +155,7 @@ const Patents = () => {
                   <Td>{index + 1}</Td>
                   <Td>{item.facultyMember}</Td>
                   <Td>{item.title}</Td>
-                  <Td>{item.patentStatus}</Td>
+                  <Td>{item.Status}</Td>
                 </Tr>
               ))}
         </Tbody>

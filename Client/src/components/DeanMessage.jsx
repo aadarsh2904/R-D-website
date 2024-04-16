@@ -8,7 +8,7 @@ const DeanMessage = () => {
         <h1 className="text-5xl font-bold  py-4 text-blue-900 max-[840px]:text-4xl">
           Dean(R&D)`s Message
         </h1>
-        <p className="text-2xl text-justify ">
+        <p className="text-2xl text-justify max-md:text-xl">
           Research and development have been integral to IIT Indore since its
           inception. With over 600 sponsored projects and 7500 publications in
           internationally reputed journals, the institute has made significant
