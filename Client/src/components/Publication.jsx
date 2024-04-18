@@ -13,45 +13,41 @@ const Publication = () => {
     facultyMember: '',
     department: '',
   });
-  const [options, setOptions] = useState({
-    publicationtype: [],
-    year: [],
-    facultyMember: [],
-    department: [],
-  });
+  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/publications");
         setData(res.data);
-        setOriginalData(res.data);
-        setFilteredData(res.data);
-        extractOptions(res.data);
       } catch (error) {
         console.log(error);
       }
     };
+
     fetchData();
   }, []);
 
-  const extractOptions = (data) => {
-    const uniqueOptions = {
-      publicationtype: [...new Set(data.map((item) => item.publicationtype))],
-      year: [...new Set(data.map((item) => item.year))],
-      facultyMember: [...new Set(data.map((item) => item.facultyMember))],
-      department: [...new Set(data.map((item) => item.department))],
-    };
-    setOptions(uniqueOptions);
-  };
+  useEffect(() => {
+    setOriginalData(data);
+    setFilteredData(data);
+  }, [data]);
+
+  useEffect(() => {
+    applyFilters();
+  }, [filters, originalData]);
 
   const applyFilters = () => {
     let filteredResult = [...originalData];
+
     Object.keys(filters).forEach((filter) => {
       if (filters[filter] !== '') {
-        filteredResult = filteredResult.filter((item) => item[filter] === filters[filter]);
+        filteredResult = filteredResult.filter(
+          (item) => item[filter] === filters[filter]
+        );
       }
     });
+
     setFilteredData(filteredResult);
   };
 
@@ -59,6 +55,36 @@ const Publication = () => {
     setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
   };
 
+  const uniqueYears = [...new Set(data.map((item) => item.year))];
+  const uniquepublicationtype = [...new Set(data.map((item) => item.publicationtype))];
+  const uniqueFacultyMembers = [
+    ...new Set(data.map((item) => item.facultyMember)),
+  ];
+  const uniqueDepartments = [...new Set(data.map((item) => item.department))];
+
+  const yearOptions = uniqueYears.map((year) => (
+    <option key={year} value={year}>
+      {year}
+    </option>
+  ));
+
+  const publicationtypeOptions = uniquepublicationtype.map((publicationtype) => (
+    <option key={publicationtype} value={publicationtype}>
+      {publicationtype}
+    </option>
+  ));
+
+  const facultyMemberOptions = uniqueFacultyMembers.map((member) => (
+    <option key={member} value={member}>
+      {member}
+    </option>
+  ));
+
+  const departmentOptions = uniqueDepartments.map((department) => (
+    <option key={department} value={department}>
+      {department}
+    </option>
+  ));
   return (
     <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
       <Box mt={20} mb={20}>
@@ -86,12 +112,9 @@ const Publication = () => {
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="">All Publication Types</option>
-              {options.publicationtype.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+             
+             <option value="">All Publication</option>
+              {publicationtypeOptions}
             </Select>
 
             <Select
@@ -110,11 +133,7 @@ const Publication = () => {
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
               <option value="">All Years</option>
-              {options.year.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+              {yearOptions}
             </Select>
 
             <Select
@@ -133,11 +152,7 @@ const Publication = () => {
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
               <option value="">All Faculty Members</option>
-              {options.facultyMember.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+              {facultyMemberOptions}
             </Select>
 
             <Select
@@ -156,12 +171,9 @@ const Publication = () => {
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
+              
               <option value="">All Departments</option>
-              {options.department.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+              {departmentOptions}
             </Select>
           </Flex>
         </Stack>

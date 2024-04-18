@@ -8,59 +8,90 @@ const Sponsoredproject = () => {
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    status: '',
+    Status: '',
     facultyMember: '',
     department: '',
-    year: '',
     fundingagency: '',
   });
-  const [options, setOptions] = useState({
-    status: [],
-    facultyMember: [],
-    department: [],
-    year: [],
-    fundingagency: [],
-  });
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/sponsored");
         setData(res.data);
-        setOriginalData(res.data);
-        setFilteredData(res.data);
-        extractOptions(res.data);
       } catch (error) {
         console.log(error);
       }
     };
+
     fetchData();
   }, []);
 
-  const extractOptions = (data) => {
-    const uniqueOptions = {
-      status: [...new Set(data.map((item) => item.status))],
-      facultyMember: [...new Set(data.map((item) => item.facultyMember))],
-      department: [...new Set(data.map((item) => item.department))],
-      year: [...new Set(data.map((item) => item.year))],
-      fundingagency: [...new Set(data.map((item) => item.fundingagency))],
-    };
-    setOptions(uniqueOptions);
-  };
+  useEffect(() => {
+    setOriginalData(data);
+    setFilteredData(data);
+  }, [data]);
+
+  useEffect(() => {
+    applyFilters();
+  }, [filters, originalData]);
 
   const applyFilters = () => {
     let filteredResult = [...originalData];
+
     Object.keys(filters).forEach((filter) => {
       if (filters[filter] !== '') {
-        filteredResult = filteredResult.filter((item) => item[filter] === filters[filter]);
+        filteredResult = filteredResult.filter(
+          (item) => item[filter] === filters[filter]
+        );
       }
     });
+
     setFilteredData(filteredResult);
   };
 
   const handleFilterChange = (filterName, value) => {
     setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
   };
+
+  const uniquefundingagency = [...new Set(data.map((item) => item.fundingagency))];
+  const uniqueStatus = [...new Set(data.map((item) => item.Status))];
+  const uniqueFacultyMembers = [
+    ...new Set(data.map((item) => item.facultyMember)),
+  ];
+  const uniqueDepartments = [...new Set(data.map((item) => item.department))];
+
+  const fundingagencyOptions = uniquefundingagency.map((fundingagency) => (
+    <option key={fundingagency} value={fundingagency}>
+      {fundingagency}
+    </option>
+  ));
+
+  const statusOptions = uniqueStatus.map((status) => (
+    <option key={status} value={status}>
+      {status}
+    </option>
+  ));
+
+  const facultyMemberOptions = uniqueFacultyMembers.map((member) => (
+    <option key={member} value={member}>
+      {member}
+    </option>
+  ));
+
+  const departmentOptions = uniqueDepartments.map((department) => (
+    <option key={department} value={department}>
+      {department}
+    </option>
+  ));
+
+
+
+
+
+
+
+
 
   return (
     <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
@@ -90,12 +121,8 @@ const Sponsoredproject = () => {
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="">All Funding Agencies</option>
-              {options.fundingagency.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+             <option value="">All fundingagency</option>
+              {fundingagencyOptions}
             </Select>
 
             <Select
@@ -114,12 +141,8 @@ const Sponsoredproject = () => {
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="">All Status</option>
-              {options.status.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+             <option value="">All Status</option>
+              {statusOptions}
             </Select>
 
             <Select
@@ -138,12 +161,8 @@ const Sponsoredproject = () => {
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="">All Faculty Members</option>
-              {options.facultyMember.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+             <option value="">All facultyMember</option>
+              {facultyMemberOptions}
             </Select>
 
             <Select
@@ -162,12 +181,8 @@ const Sponsoredproject = () => {
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="">All Departments</option>
-              {options.department.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
+              <option value="">All Department</option>
+              {departmentOptions}
             </Select>
           </Flex>
         </Stack>
