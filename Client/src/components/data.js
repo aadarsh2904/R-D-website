@@ -11,6 +11,8 @@ import Jitendra from './Teamimg/Jitendra.jpg'
 import Amit from './Teamimg/Amit.jpeg'
 import Jayprakash from './Teamimg/Jayprakash.jpg'
 import Archana from './Teamimg/IMG_20230824_094941.jpg'
+import Shubham from './Teamimg/Shubham Purey.jpeg'
+import Yogesh from './Teamimg/Mr Yogesh Rathore.jpg'
 
 
 export const CombinedData = [
@@ -47,7 +49,7 @@ export const CombinedData = [
       position: 'Junior Assistant',
       email: 'ja3rnd [at] iiti.ac.in',
       phone: '+91-731-6603563',
-      image_url: '',
+      image_url: Yogesh,
       role: 'Finance'
     },
     {
@@ -145,7 +147,24 @@ export const CombinedData = [
 
 
 
-    }
+    },
+
+    {
+      id: 15,
+      name: 'Shubham Purey',
+      position: 'Executive Officer',
+      phone : '+91-731-6603396',
+      email: ' arrnd1@iiti.ac.in',
+      image_url:Shubham,
+      role: 'Purchase'
+
+
+
+
+  }
+
+
+
     // Add more data from the Purchase array...
   ];
 

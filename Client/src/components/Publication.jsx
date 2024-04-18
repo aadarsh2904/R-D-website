@@ -171,7 +171,7 @@ const Publication = () => {
               bg='#cbd5e1'
               mb={4}
               padding="0.75rem"
-            
+              className="text-base md:text-lg lg:text-lg" 
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
@@ -185,9 +185,9 @@ const Publication = () => {
       <Table w="100%" variant="striped">
         <Thead>
           <Tr className="bg-gray-200">
-            <Th className="w-250">S.No</Th>
-            <Th>Publication Title</Th>
-            <Th className="w-14">View Details</Th>
+            <Th className="w-250 text-xl">S.No</Th>
+            <Th className=" text-xl">Publication Title</Th>
+            <Th className="w-14 text-xl">View Details</Th>
           </Tr>
         </Thead>
         <Tbody>
