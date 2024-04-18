@@ -73,6 +73,13 @@ app.get('/api/researchmetrics', (req, res) => {
     return res.json(data)
  })
 })
+app.get('/api/cep', (req, res) => {
+ const q = "SELECT * FROM cepdata";
+ db.query(q,(err,data)=>{
+    if(err) return res.json(err)
+    return res.json(data)
+ })
+})
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)

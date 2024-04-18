@@ -31,18 +31,18 @@ const Technologies = () => {
           <Thead>
             <Tr className="bg-gray-200">
               <Th className="w-6">S.No</Th>
-              <Th>Faculty Name</Th>
-              <Th>Technology Title</Th>
-              <Th>Technology Status</Th>
+              <Th>Technology</Th>
+              <Th>Application Area</Th>
+            
             </Tr>
           </Thead>
           <Tbody>
             {data.map((item, index) => (
               <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
                 <Td>{index + 1}</Td>
-                <Td>{item.facultyMember}</Td>
-                <Td>{item.title}</Td>
-                <Td>{item.Status}</Td>
+                <Td>{item.technology}</Td>
+                <Td>{item.applicationarea}</Td>
+                
               </Tr>
             ))}
           </Tbody>

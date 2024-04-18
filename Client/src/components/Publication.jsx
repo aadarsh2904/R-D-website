@@ -12,6 +12,10 @@ const Publication = () => {
     year: '',
     facultyMember: '',
     department: '',
+    // publicationTypes: [],
+    // years: [],
+    // facultyMembers: [],
+    // departments: []
   });
   
 
@@ -52,7 +56,7 @@ const Publication = () => {
   };
 
   const handleFilterChange = (filterName, value) => {
-    setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
+    setFilters(prevFilters => ({ ...prevFilters, [filterName]: value }));
   };
 
   const uniqueYears = [...new Set(data.map((item) => item.year))];
@@ -86,7 +90,7 @@ const Publication = () => {
     </option>
   ));
   return (
-    <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
+    <div className="px-2 bg-cover bg-center min-h-screen" style={{ backgroundImage: 'url("./bgr.png")' }}>
       <Box mt={20} mb={20}>
       <Heading 
         as="h1"
@@ -189,27 +193,27 @@ const Publication = () => {
         <Tbody>
           {filters.publicationtype || filters.year || filters.facultyMember || filters.department
             ? filteredData.map((item, index) => (
-                <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
-                  <Td>{index + 1}</Td>
-                  <Td>{item.title}</Td>
-                  <Td>
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
-                    </a>
-                  </Td>
-                </Tr>
-              ))
+              <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
+                <Td>{index + 1}</Td>
+                <Td>{item.title}</Td>
+                <Td>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
+                  </a>
+                </Td>
+              </Tr>
+            ))
             : originalData.map((item, index) => (
-                <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
-                  <Td>{index + 1}</Td>
-                  <Td>{item.title}</Td>
-                  <Td>
-                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                      <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
-                    </a>
-                  </Td>
-                </Tr>
-              ))}
+              <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
+                <Td>{index + 1}</Td>
+                <Td>{item.title}</Td>
+                <Td>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <button className="bg-blue-500 text-white px-3 py-1 rounded-md">View Details</button>
+                  </a>
+                </Td>
+              </Tr>
+            ))}
         </Tbody>
       </Table>
     </div>

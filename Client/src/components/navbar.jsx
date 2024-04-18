@@ -24,7 +24,7 @@ const Navbar = () => {
   const handleNavbar =() => {
     
    if(navbar==='hidden'){
-   setNavbar("absolute right-0 z-20 border-2px rounded-lg p-2 mt-2 shadow-lg  w-[19rem] text-sm bg-gray-200 ");
+   setNavbar("absolute right-0 z-20 border-2px rounded-lg p-2 mt-2 shadow-lg  w-[19rem] text-sm bg-gray-100 text-blue-900 ");
    }
   
    else{
@@ -121,7 +121,7 @@ const Navbar = () => {
 
     {/******* Mini navbar ***********/}
 
-    <div className="absolute top-6 right-3 min-[1241px]:hidden shadow-lg max-w-[50%] ">
+    <div className="absolute top-6 right-3 min-[1241px]:hidden shadow-lg max-w-[50%]">
 
       <button className="p-1 bg-gray-100 rounded-lg " onClick={handleNavbar}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="inline-block w-12 h-12 text-blue-900 ">

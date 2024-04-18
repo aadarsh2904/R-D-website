@@ -8,7 +8,7 @@ const Sponsoredproject = () => {
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-    Status: '',
+    status: '',
     facultyMember: '',
     department: '',
     fundingagency: '',
@@ -55,7 +55,7 @@ const Sponsoredproject = () => {
   };
 
   const uniquefundingagency = [...new Set(data.map((item) => item.fundingagency))];
-  const uniqueStatus = [...new Set(data.map((item) => item.Status))];
+  const uniqueStatus = [...new Set(data.map((item) => item.status))];
   const uniqueFacultyMembers = [
     ...new Set(data.map((item) => item.facultyMember)),
   ];

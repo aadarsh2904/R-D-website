@@ -19,8 +19,8 @@ const navbar = () => {
 
             <div className='relative pl-2 w-60% max-[425px]:w-[50%]'>
               <div className='flex flex-row max-[590px]:flex-col'>
-              <p className=' text-3xl font-semibold max-lg:text-2xl max-md:text-xl max-[698px]:text-lg max-[425px]:text-sm'>  अनुसंधान एवं विकास,</p>
-              <p className='text-3xl font-semibold max-lg:text-2xl max-md:text-xl max-[698px]:text-lg  max-[425px]:text-sm'>   भारतीय प्रौद्योगिकी संस्थान इंदौर</p>
+              <p className=' text-3xl font-semibold max-lg:text-2xl max-md:text-xl max-[698px]:text-lg max-[425px]:text-sm max-[425px]:font-bold'>  अनुसंधान एवं विकास,</p>
+              <p className='text-3xl font-semibold max-lg:text-2xl max-md:text-xl max-[698px]:text-lg  max-[425px]:text-sm max-[425px]:font-bold'>   भारतीय प्रौद्योगिकी संस्थान इंदौर</p>
               </div>
               <div className='flex flex-row max-[590px]:flex-col'>
               <p className=' text-2xl max-lg:text-xl  max-md:text-lg max-[698px]:text-sm'> Research & Development,</p>
