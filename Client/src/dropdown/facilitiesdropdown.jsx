@@ -2,7 +2,7 @@ import React from "react";
 
 export default function DropdownLinkButton2() {
   return (
-    <div className="flex flex-col items-center overflow-hidden hover:overflow-visible cursor-pointer h-[3.8rem] pt-0 mt-0  hover:bg-white hover:text-blue-700 ">
+    <div className="flex flex-col items-center  overflow-hidden hover:overflow-visible cursor-pointer h-[3.8rem] pt-0 mt-0  hover:bg-white hover:text-blue-700 ">
       <div className="h-[100%] text-center p-4 mb-[1px] flex flex-row  ">
         <p className=" inline ">Facilities & Opportunities</p>
         <span className="inline-block [&>svg]:w-6 ml-1  ">
