@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 import {
   Table,
   Thead,
@@ -8,53 +8,51 @@ import {
   Th,
   Td,
   Box,
+  Heading,
 } from '@chakra-ui/react';
 import { Select, Flex, Stack } from '@chakra-ui/react';
 
-
-
 const Patents = () => {
-
-  const [data,setData] =useState([]);
+  const [data, setData] = useState([]);
   const [originalData, setOriginalData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
-   Status: '',
+    year: '',
+    Status: '',
     facultyMember: '',
     department: '',
-    year:'',
   });
-  
-  useEffect(()=>{
-    const fetchData = async()=>{
-    try {
-      const res = await axios.get("http://localhost:5000/api/patents");
-       setData(res.data)
-    } catch (error) {
-      console.log(error)
-    }
-    }
-    
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/patents");
+        setData(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchData();
-  },[])
+  }, []);
 
   useEffect(() => {
     setOriginalData(data);
     setFilteredData(data);
-    
-    
   }, [data]);
 
   useEffect(() => {
     applyFilters();
-  }, [filters]);
+  }, [filters, originalData]);
 
   const applyFilters = () => {
     let filteredResult = [...originalData];
 
     Object.keys(filters).forEach((filter) => {
       if (filters[filter] !== '') {
-        filteredResult = filteredResult.filter((item) => item[filter] === filters[filter]);
+        filteredResult = filteredResult.filter(
+          (item) => item[filter] === filters[filter]
+        );
       }
     });
 
@@ -62,13 +60,50 @@ const Patents = () => {
   };
 
   const handleFilterChange = (filterName, value) => {
-    
     setFilters((prevFilters) => ({ ...prevFilters, [filterName]: value }));
   };
 
+  const uniqueYears = [...new Set(data.map((item) => item.year))];
+  const uniqueStatus = [...new Set(data.map((item) => item.Status))];
+  const uniqueFacultyMembers = [
+    ...new Set(data.map((item) => item.facultyMember)),
+  ];
+  const uniqueDepartments = [...new Set(data.map((item) => item.department))];
+
+  const yearOptions = uniqueYears.map((year) => (
+    <option key={year} value={year}>
+      {year}
+    </option>
+  ));
+
+  const statusOptions = uniqueStatus.map((status) => (
+    <option key={status} value={status}>
+      {status}
+    </option>
+  ));
+
+  const facultyMemberOptions = uniqueFacultyMembers.map((member) => (
+    <option key={member} value={member}>
+      {member}
+    </option>
+  ));
+
+  const departmentOptions = uniqueDepartments.map((department) => (
+    <option key={department} value={department}>
+      {department}
+    </option>
+  ));
+
   return (
-    <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: `url('./bgr.png')` }}>
+    <div className="px-2 bg-cover bg-center min-h-screen " style={{ backgroundImage: 'url("./bgr.png")' }}>
       <Box mt={20} mb={20}>
+        <Heading
+          as="h1"
+          className="text-3xl font-bold text-center my-8 text-black"
+          style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
+        >
+          Patent Details
+        </Heading>
         <Stack spacing={8} px={4} py={8} alignItems="center">
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
             <Select
@@ -78,12 +113,16 @@ const Patents = () => {
               placeholder="Select Academic Year"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
-              height="2.5rem"
+              height="3.5rem"
               icon={<></>}
               bg='#cbd5e1'
+              boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)" // Shadow
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="2021-22">2021-22</option>
-              <option value="2022-23">2022-23</option>
+              <option value="">All Years</option>
+              {yearOptions}
             </Select>
             <Select
               variant="filled"
@@ -92,13 +131,15 @@ const Patents = () => {
               placeholder="Select Patent Status"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
-              height="2.5rem"
+              height="3.5rem"
               icon={<></>}
               bg='#cbd5e1'
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="Filed">Filed</option>
-              <option value="Granted">Granted</option>
-              <option value="Published">Published</option>
+              <option value="">All Statuses</option>
+              {statusOptions}
             </Select>
             <Select
               variant="filled"
@@ -107,12 +148,15 @@ const Patents = () => {
               placeholder="Select Faculty Member"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
-              height="2.5rem"
+              height="3.5rem"
               icon={<></>}
               bg='#cbd5e1'
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="Abhijeet Joshi">Abhijeet Joshi</option>
-              <option value="Dr. Manish Kumar Goyal">Dr. Manish Kumar Goyal</option>
+              <option value="">All Faculty Members</option>
+              {facultyMemberOptions}
             </Select>
             <Select
               variant="filled"
@@ -121,12 +165,15 @@ const Patents = () => {
               placeholder="Select Department"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
-              height="2.5rem"
+              height="3.5rem"
               icon={<></>}
               bg='#cbd5e1'
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
-              <option value="Civil Engineering">Civil Engineering</option>
-              <option value="Electrical Engineering">Electrical Engineering</option>
+              <option value="">All Departments</option>
+              {departmentOptions}
             </Select>
           </Flex>
         </Stack>
@@ -141,23 +188,14 @@ const Patents = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {filters.year || filters.Status || filters.facultyMember || filters.department
-            ? filteredData.map((item, index) => (
-                <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
-                  <Td>{index + 1}</Td>
-                  <Td>{item.facultyMember}</Td>
-                  <Td>{item.title}</Td>
-                  <Td>{item.Status}</Td>
-                </Tr>
-              ))
-            : originalData.map((item, index) => (
-                <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
-                  <Td>{index + 1}</Td>
-                  <Td>{item.facultyMember}</Td>
-                  <Td>{item.title}</Td>
-                  <Td>{item.Status}</Td>
-                </Tr>
-              ))}
+          {filteredData.map((item, index) => (
+            <Tr key={index} className={index % 2 === 0 ? 'bg-gray-100 hover:bg-table' : 'hover:bg-table'}>
+              <Td>{index + 1}</Td>
+              <Td>{item.facultyMember}</Td>
+              <Td>{item.title}</Td>
+              <Td>{item.Status}</Td>
+            </Tr>
+          ))}
         </Tbody>
       </Table>
     </div>
