@@ -181,10 +181,10 @@ const Patents = () => {
       <Table w="100%" variant="striped">
         <Thead>
           <Tr className="bg-gray-200">
-            <Th className="w-6">S.No</Th>
-            <Th>Faculty Name</Th>
-            <Th>Patent Title</Th>
-            <Th>Patent Status</Th>
+            <Th className="w-6 text-xl">S.No</Th>
+            <Th className=" text-xl">Faculty Name</Th>
+            <Th className=" text-xl">Patent Title</Th>
+            <Th className=" text-xl">Patent Status</Th>
           </Tr>
         </Thead>
         <Tbody>

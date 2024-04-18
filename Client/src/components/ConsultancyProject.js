@@ -151,8 +151,8 @@ const ConsultancyProject = () => {
       <Table w="100%" variant="striped">
         <Thead>
           <Tr className="bg-gray-200">
-            <Th className="w-6">S.No</Th>
-            <Th>Project Title</Th>
+            <Th className="w-6 text-xl">S.No</Th>
+            <Th className=" text-xl">Project Title</Th>
             {/* Add more table headings as needed */}
           </Tr>
         </Thead>

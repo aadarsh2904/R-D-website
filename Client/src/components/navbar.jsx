@@ -255,13 +255,13 @@ const Navbar = () => {
         <hr className='w-full'/>
         <li className={dropdown3}>
           <div >
-            <a href="/sponsored">Sponsored </a>
+            <a href="/projects/sponsored">Sponsored </a>
           </div>
         </li>
         <hr className={hr3}/>
         <li className={dropdown3}>
           <div >
-            <a href="/consultancy">Consultancy</a>
+            <a href="/projects/consultancy">Consultancy</a>
           </div>
         </li>
         <hr className={hr3}/>
@@ -303,7 +303,7 @@ const Navbar = () => {
         <hr className='w-full'/>
         <li className={dropdown4}>
           <div >
-            <a href="/patents">Patents </a>
+            <a href="/patent">Patents </a>
           </div>
         </li>
         <hr className={hr4}/>
