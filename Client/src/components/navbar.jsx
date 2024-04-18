@@ -121,7 +121,7 @@ const Navbar = () => {
 
     {/******* Mini navbar ***********/}
 
-    <div className="absolute top-6 right-3 min-[1241px]:hidden shadow-lg max-w-[50%] ">
+    <div className="absolute top-6 right-3 min-[1241px]:hidden shadow-lg max-w-[50%] max-sm:w-full">
 
       <button className="p-1 bg-gray-100 rounded-lg " onClick={handleNavbar}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="inline-block w-12 h-12 text-blue-900 ">

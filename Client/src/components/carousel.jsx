@@ -40,7 +40,7 @@ const Carousel = ({ images }) => {
             key={index}
             src={image}
             alt={`Slide ${index}`}
-            className={`w-full  ${index === currentImageIndex ? 'block' : 'hidden'}`}
+            className={`overflow-hidden p-4 h-[] ${index === currentImageIndex ? 'block' : 'hidden'}`}
             style={{ minHeight: "100%", objectFit: "cover" }}
           />
         ))}

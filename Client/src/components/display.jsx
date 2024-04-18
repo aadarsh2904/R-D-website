@@ -16,7 +16,7 @@ export default function display(){
     <div className=" mt-4 min-w-[55%] max-w-[98vw] min-h-[50vh] max-h-[70vh] p-2 mx-auto">
       <Carousel images={images} />
     </div>
-    <div className="min-w-[38%] mx-auto mb-12 px-4 "><Notification/></div>
+    <div className="min-w-[40%] mx-auto mb-12 px-4 "><Notification/></div>
     </div>
   );
 };
