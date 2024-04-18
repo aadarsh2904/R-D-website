@@ -13,10 +13,10 @@ export default function display(){
 
   return (
     <div className="flex flex-row flex-wrap ">
-    <div className=" mt-4 min-w-[55%] min-h-[70vh]:lg p-2 mx-auto">
+    <div className=" mt-6 min-w-[55%] max-h-[65vh]  p-1 mx-auto max-[1635px]:h-[30rem] ">
       <Carousel images={images} />
     </div>
-    <div className="min-w-[40%] mx-auto mb-12 px-4 "><Notification/></div>
+    <div className="min-w-[40%] max-[1635px]:min-w-[60%]  mx-auto mb-12 px-4 "><Notification/></div>
     </div>
   );
 };

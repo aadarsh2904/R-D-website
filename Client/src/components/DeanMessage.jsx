@@ -36,11 +36,11 @@ const DeanMessage = () => {
              IIT Indore</i>
           </p>
       </div>
-      <div className="w-[20%] min-w-[20rem] mx-auto flex flex-col items-end p-6">
+      <div className="w-[25%] min-w-[20rem] mx-auto flex flex-col items-end p-6">
           <hr className="inline-block w-[50%] border-4 border-solid border-blue-700 " />
           <img
-            src={"dean.png"}
-            alt="Logo"
+            src={"/DRPlani.jpg"}
+            alt="Dean Sir`s photo"
             className="inline-block border-r-8 border-solid border-blue-700  mx-auto shadow-lg h-[20rem] w-[100%]"
           />
           <hr className="inline-block w-[50%] border-4 border-solid border-blue-700 " />

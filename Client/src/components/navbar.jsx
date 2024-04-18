@@ -23,7 +23,7 @@ const Navbar = () => {
   const handleNavbar = () => {
     if (navbar === "hidden") {
       setNavbar(
-        "absolute right-0 z-20 border-2px rounded-lg p-2 mt-2 shadow-lg  w-[19rem] text-sm bg-gray-100 text-blue-900 "
+        "absolute right-0 z-20 border-2px border-solid border-blue-800 backdrop-lg p-2 mt-2 shadow-lg  w-[20rem] text-sm bg-gray-100 text-blue-900 "
       );
     } else {
       setNavbar("hidden");

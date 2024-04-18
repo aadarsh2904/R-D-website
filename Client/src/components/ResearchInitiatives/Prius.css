@@ -1,7 +1,7 @@
 .research-scheme-container {
      max-width: 1600px;
     margin: 0 auto;
-    /* padding: 20px; */
+    padding: 2rem;
     /* background-color: #eeeaea; */
     /* border-radius: 30px; */
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);     */
@@ -9,10 +9,12 @@
   
   .section-heading {
     font-family:"Poppins",san-seriff;
-    font-size: 3.8em;
+    font-size: 3.2em;
     color: #0e116c;
     text-align: center;
+    font-weight: 600;
     margin-bottom: 20px;
+   padding:0.5em;
   }
   
   .scheme-details p {
