@@ -30,7 +30,7 @@ const Carousel = ({ images }) => {
 
   return (
     <div
-      className="relative overflow-hidden w-[98%] h-[100%] border-2 border-solid rounded-lg shadow-xl cursor-pointer mx-auto"
+      className="relative overflow-hidden w-[98%]h-[40rem] border-2 border-solid rounded-lg shadow-xl cursor-pointer mx-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -40,7 +40,7 @@ const Carousel = ({ images }) => {
             key={index}
             src={image}
             alt={`Slide ${index}`}
-            className={`overflow-hidden p-4 h-[] ${index === currentImageIndex ? 'block' : 'hidden'}`}
+            className={`w-full h-full ${index === currentImageIndex ? 'block' : 'hidden'}`}
             style={{ minHeight: "100%", objectFit: "cover" }}
           />
         ))}
