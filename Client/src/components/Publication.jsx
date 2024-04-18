@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, Thead, Tbody, Tr, Th, Td, Box } from '@chakra-ui/react';
-import { Select, Flex, Stack } from '@chakra-ui/react'; // You can remove this import if you're not using Flex and Stack
+import { Table, Thead, Tbody, Tr, Th, Td, Box,Heading } from '@chakra-ui/react';
+import { Select, Flex, Stack } from '@chakra-ui/react';
 
 const Publication = () => {
   const [data, setData] = useState([]);
@@ -17,49 +17,45 @@ const Publication = () => {
     facultyMembers: [],
     departments: []
   });
+  const [options, setOptions] = useState({
+    publicationtype: [],
+    year: [],
+    facultyMember: [],
+    department: [],
+  });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/publications");
-        if (res.data && Array.isArray(res.data)) { // Check if res.data exists and is an array
-          setData(res.data);
-          setOriginalData(res.data);
-          setFilteredData(res.data);
-          
-          const publicationTypes = [...new Set(res.data.map(item => item.publicationtype))];
-          const years = [...new Set(res.data.map(item => item.year))];
-          const facultyMembers = [...new Set(res.data.map(item => item.facultyMember))];
-          const departments = [...new Set(res.data.map(item => item.department))];
-          
-          setFilters(prevFilters => ({
-            ...prevFilters,
-            publicationTypes,
-            years,
-            facultyMembers,
-            departments
-          }));
-        } else {
-          console.log("Data is not an array or is undefined");
-        }
+        setData(res.data);
+        setOriginalData(res.data);
+        setFilteredData(res.data);
+        extractOptions(res.data);
       } catch (error) {
         console.log(error);
       }
-    }
+    };
     fetchData();
   }, []);
-  
-  
+
+  const extractOptions = (data) => {
+    const uniqueOptions = {
+      publicationtype: [...new Set(data.map((item) => item.publicationtype))],
+      year: [...new Set(data.map((item) => item.year))],
+      facultyMember: [...new Set(data.map((item) => item.facultyMember))],
+      department: [...new Set(data.map((item) => item.department))],
+    };
+    setOptions(uniqueOptions);
+  };
 
   const applyFilters = () => {
     let filteredResult = [...originalData];
-
     Object.keys(filters).forEach((filter) => {
       if (filters[filter] !== '' && filter !== 'publicationTypes' && filter !== 'years' && filter !== 'facultyMembers' && filter !== 'departments') {
         filteredResult = filteredResult.filter((item) => item[filter] === filters[filter]);
       }
     });
-
     setFilteredData(filteredResult);
   };
 
@@ -70,29 +66,107 @@ const Publication = () => {
   return (
     <div className="px-2 bg-cover bg-center min-h-screen" style={{ backgroundImage: 'url("./bgr.png")' }}>
       <Box mt={20} mb={20}>
+      <Heading 
+        as="h1"
+        className="text-3xl font-bold text-center my-8 text-black"
+        style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
+      >
+      Publication
+        </Heading>
         <Stack spacing={8} px={4} py={8} alignItems="center">
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
-            {Object.keys(filters).map((filterName, index) => (
-              (filterName !== 'publicationTypes' && filterName !== 'years' && filterName !== 'facultyMembers' && filterName !== 'departments') &&
-              <Select
-                key={index}
-                variant="filled"
-                value={filters[filterName]}
-                onChange={(e) => handleFilterChange(filterName, e.target.value)}
-                placeholder={filterName.charAt(0).toUpperCase() + filterName.slice(1)} 
-                width={{ base: '100%', md: '20%' }}
-                borderRadius="5px"
-                height="2.5rem"
-                icon={<></>}
-                bg='#cbd5e1'
-                mb={4}
-              >
-                <option value="">All {filterName.charAt(0).toUpperCase() + filterName.slice(1)}</option>
-                {filters[filterName + 's'].map((option, index) => (
-                  <option key={index} value={option}>{option}</option>
-                ))}
-              </Select>
-            ))}
+            <Select
+              variant="filled"
+              value={filters.publicationtype}
+              onChange={(e) => handleFilterChange('publicationtype', e.target.value)}
+              placeholder="Publication Type"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="3.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+              mb={4}
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
+            >
+              <option value="">All Publication Types</option>
+              {options.publicationtype.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Select>
+
+            <Select
+              variant="filled"
+              value={filters.year}
+              onChange={(e) => handleFilterChange('year', e.target.value)}
+              placeholder="Year"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="3.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+              mb={4}
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
+            >
+              <option value="">All Years</option>
+              {options.year.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Select>
+
+            <Select
+              variant="filled"
+              value={filters.facultyMember}
+              onChange={(e) => handleFilterChange('facultyMember', e.target.value)}
+              placeholder="Faculty Member"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="3.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+              mb={4}
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
+            >
+              <option value="">All Faculty Members</option>
+              {options.facultyMember.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Select>
+
+            <Select
+              variant="filled"
+              value={filters.department}
+              onChange={(e) => handleFilterChange('department', e.target.value)}
+              placeholder="Department"
+              width={{ base: '100%', md: '20%' }}
+              borderRadius="5px"
+              height="3.5rem"
+              icon={<></>}
+              bg='#cbd5e1'
+              mb={4}
+              padding="0.75rem"
+            
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
+            >
+              <option value="">All Departments</option>
+              {options.department.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Select>
           </Flex>
         </Stack>
       </Box>

@@ -118,6 +118,8 @@ const Patents = () => {
               bg='#cbd5e1'
               boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)" // Shadow
               padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
               <option value="">All Years</option>
               {yearOptions}
@@ -129,9 +131,12 @@ const Patents = () => {
               placeholder="Select Patent Status"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
-              height="2.5rem"
+              height="3.5rem"
               icon={<></>}
               bg='#cbd5e1'
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
               <option value="">All Statuses</option>
               {statusOptions}
@@ -143,9 +148,12 @@ const Patents = () => {
               placeholder="Select Faculty Member"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
-              height="2.5rem"
+              height="3.5rem"
               icon={<></>}
               bg='#cbd5e1'
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
               <option value="">All Faculty Members</option>
               {facultyMemberOptions}
@@ -157,9 +165,12 @@ const Patents = () => {
               placeholder="Select Department"
               width={{ base: '100%', md: '20%' }}
               borderRadius="5px"
-              height="2.5rem"
+              height="3.5rem"
               icon={<></>}
               bg='#cbd5e1'
+              padding="0.75rem"
+              fontSize="20px"
+              style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
               <option value="">All Departments</option>
               {departmentOptions}
