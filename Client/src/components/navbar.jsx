@@ -138,6 +138,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
+>>>>>>>>> Temporary merge branch 2
 
         <div className={navbar}>
           {/*Home*/}
