@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/navbar'
-import Cep from '../components/ResearchInitiatives/Cep'
+import Cep from '../components/Cep'
 import Footer from '../components/Footer/Footer'
 
 const cep = () => {

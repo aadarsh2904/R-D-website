@@ -85,7 +85,7 @@ export default function Footer() {
 
                 </div>
             </div>
-            {/* <iframe className='border-2 rounded-xl w-[18rem] h-[12rem] ml-0' id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=IIT%20Indore%20Simrol+(IIT%20Indore)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> */}
+            
             <div className='my__footer-below'>
                 <div className='my__footer-below-links'>
 

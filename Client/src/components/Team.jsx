@@ -1,4 +1,5 @@
 import React from "react";
+// This component is for People`s page `
 import { OFFICE, Finance, People, Purchase, Executive, TranslationalResearch } from "./data";
 
 const TeamPage = () => {

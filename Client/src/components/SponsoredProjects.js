@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// this component contains section of Sponsored Projects Page 
 import { Table, Thead, Tbody, Tr, Th, Td, Box, Heading } from '@chakra-ui/react';
 import { Select, Flex, Stack } from '@chakra-ui/react';
 
@@ -14,6 +15,7 @@ const Sponsoredproject = () => {
     fundingagency: '',
   });
   
+  // for fetching data 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -103,6 +105,7 @@ const Sponsoredproject = () => {
         >
           Sponsored Project
         </Heading>
+        {/* Filters  */}
         <Stack spacing={8} px={4} py={8} alignItems="center">
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
             <Select
@@ -187,12 +190,13 @@ const Sponsoredproject = () => {
           </Flex>
         </Stack>
       </Box>
+      {/* Table  */}
       <Table w="100%" variant="striped">
         <Thead>
           <Tr className="bg-gray-200">
-            <Th className="w-6">S.No</Th>
-            <Th>Project Title</Th>
-            <Th>Status</Th>
+            <Th className="w-6 text-xl">S.No</Th>
+            <Th className=" text-xl">Project Title</Th>
+            <Th className=" text-xl">Status</Th>
           </Tr>
         </Thead>
         <Tbody>

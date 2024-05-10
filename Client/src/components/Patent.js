@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// This component contains section of Patents Page 
 import axios from 'axios';
 import {
   Table,
@@ -23,6 +24,7 @@ const Patents = () => {
     department: '',
   });
 
+  //  For fetching data 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -105,6 +107,7 @@ const Patents = () => {
           Patent Details
         </Heading>
         <Stack spacing={8} px={4} py={8} alignItems="center">
+          {/* filters  */}
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
             <Select
               variant="filled"
@@ -181,10 +184,10 @@ const Patents = () => {
       <Table w="100%" variant="striped">
         <Thead>
           <Tr className="bg-gray-200">
-            <Th className="w-6">S.No</Th>
-            <Th>Faculty Name</Th>
-            <Th>Patent Title</Th>
-            <Th>Patent Status</Th>
+            <Th className="w-6 text-xl">S.No</Th>
+            <Th className=" text-xl">Faculty Name</Th>
+            <Th className=" text-xl">Patent Title</Th>
+            <Th className=" text-xl">Patent Status</Th>
           </Tr>
         </Thead>
         <Tbody>

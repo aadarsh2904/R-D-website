@@ -38,6 +38,7 @@ const DeanMessage = () => {
       </div>
       <div className="w-[25%] min-w-[20rem] mx-auto flex flex-col items-end p-6">
           <hr className="inline-block w-[50%] border-4 border-solid border-blue-700 " />
+          {/* Image of Dean sir  */}
           <img
             src={"/DRPlani.jpg"}
             alt="Dean Sir`s photo"

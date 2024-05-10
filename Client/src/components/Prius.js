@@ -1,4 +1,5 @@
 import React from 'react';
+// This component contains section of PRIUS page 
 import './Prius.css';
 
 const Prius = () => {

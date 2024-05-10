@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios"
-
+// This component contains the Research metrics section 
 const Research = () => {
   const [data, setData] = useState({});
-
+// Fetching data 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,7 +17,7 @@ const Research = () => {
     fetchData();
   }, []);
   
-  
+  // For the counting animations 
   const CountUpAnimation = ({ initialValue, targetValue }) => {
     const [count, setCount] = useState(initialValue);
     const duration = 1000;
@@ -52,10 +52,12 @@ const Research = () => {
         <h1 className="text-7xl text-white text-center font-bold mt-8 max-md:text-6xl max-sm:text-5xl px-1 w-full">
           Research metrics at a glance
         </h1>
+        {/* date  */}
         <h3 className="text-xl font-normal text-white my-2">As of {data.date}</h3>
         <hr className="w-[90%] border-2 rounded-lg my-6" />
         <div className="flex flex-row flex-wrap w-[80%] mx-auto">
           <div className="flex flex-col w-[40%] items-center mx-auto  min-w-[20rem]">
+            {/* Patents  */}
             <h1 className="text-6xl font-bold text-white max-md:text-5xl max-sm:text-4xl mx-auto">
               Patents
             </h1>
@@ -87,6 +89,7 @@ const Research = () => {
             </div>
           </div>
           <hr className="w-1 h-[6rem] border-2 border-white  ml-4 max-[824px]:w-[90%] max-[824px]:h-[1px]" />
+          {/* Designs  */}
           <div className="flex flex-col w-[40%] items-center mx-auto  min-w-[20rem]">
             <h1 className="text-6xl font-bold text-white max-md:text-5xl max-sm:text-4xl max-[824px]:mt-3">
               Designs
@@ -122,6 +125,7 @@ const Research = () => {
         </div>
         <hr className="w-[90%] border-2  rounded-lg my-6" />
         <div className="flex flex-row flex-wrap w-[80%] mx-auto ">
+          {/* Copyrights  */}
           <div className="flex flex-col w-[40%] items-center mx-auto min-w-[20rem]">
             <h1 className="text-6xl font-bold text-white max-md:text-5xl max-sm:text-4xl">
               Copyrights
@@ -155,6 +159,7 @@ const Research = () => {
             </div>
           </div>
           <hr className="w-1 h-[6rem] border-2 border-white  ml-4 max-[824px]:w-[90%] max-[824px]:h-[1px]" />
+          {/* Trademarks  */}
           <div className="flex flex-col w-[40%] items-center mx-auto min-w-[20rem]">
             <h1 className="text-6xl font-bold text-white mx-auto max-md:text-5xl max-sm:text-4xl max-[824px]:mt-3">
               Trademarks
@@ -188,10 +193,12 @@ const Research = () => {
           </div>
         </div>
         <hr className="w-[90%] border-2  rounded-lg my-6" />
+        {/* Projects  */}
         <div className="flex flex-col items-center pb-4 ">
           <h1 className="text-6xl text-white font-bold max-md:text-5xl max-sm:text-4xl ">
             Projects
           </h1>
+          {/* Date  */}
           <p className="font-thin text-blue-100 my-2 text-xl max-md:text-lg">
             Cumulative projects as of {data.date}
           </p>
@@ -352,6 +359,7 @@ const Research = () => {
           </div>
         </div>
         <hr className="w-[90%] border-2  rounded-lg my-6" />
+        {/* Publications  */}
         <div className="flex flex-col items-center">
           <h1 className="text-6xl text-white font-bold my-2 max-md:text-5xl max-sm:text-4xl">
             Publications

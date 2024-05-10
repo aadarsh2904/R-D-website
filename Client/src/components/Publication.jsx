@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// This component contains the section of Publications page 
 import axios from 'axios';
 import { Table, Thead, Tbody, Tr, Th, Td, Box,Heading } from '@chakra-ui/react';
 import { Select, Flex, Stack } from '@chakra-ui/react';
@@ -12,13 +13,10 @@ const Publication = () => {
     year: '',
     facultyMember: '',
     department: '',
-    // publicationTypes: [],
-    // years: [],
-    // facultyMembers: [],
-    // departments: []
+    
   });
   
-
+// Fetching data from backend api 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -100,6 +98,7 @@ const Publication = () => {
       Publication
         </Heading>
         <Stack spacing={8} px={4} py={8} alignItems="center">
+          {/* Filters  */}
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
             <Select
               variant="filled"
@@ -171,7 +170,7 @@ const Publication = () => {
               bg='#cbd5e1'
               mb={4}
               padding="0.75rem"
-            
+              className="text-base md:text-lg lg:text-lg" 
               fontSize="20px"
               style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
             >
@@ -185,9 +184,9 @@ const Publication = () => {
       <Table w="100%" variant="striped">
         <Thead>
           <Tr className="bg-gray-200">
-            <Th className="w-250">S.No</Th>
-            <Th>Publication Title</Th>
-            <Th className="w-14">View Details</Th>
+            <Th className="w-250 text-xl">S.No</Th>
+            <Th className=" text-xl">Publication Title</Th>
+            <Th className="w-14 text-xl">View Details</Th>
           </Tr>
         </Thead>
         <Tbody>
