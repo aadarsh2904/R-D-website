@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/navbar'
-import Technology from '../components/ResearchInitiatives/Technologies'
+import Technology from '../components/Technologies'
 import Footer from '../components/Footer/Footer'
 
 const tech_transfer = () => {

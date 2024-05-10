@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+// This component contains section of CEP page 
 import { Table, Thead, Tbody, Tr, Th, Td, Box, Heading } from '@chakra-ui/react';
 
 const Technologies = () => {
   const [data, setData] = useState([]);
-
+// Fetching  data 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/techtransfer");
+        const res = await axios.get("http://localhost:5000/api/cep");
         setData(res.data);
       } catch (error) {
         console.log(error);
@@ -25,14 +26,20 @@ const Technologies = () => {
         className="text-3xl font-bold text-center my-8 text-black"
         style={{ fontFamily: 'Arial, sans-serif', textShadow: '3px 3px 6px rgba(0, 0, 0, 0.3)' }}
       >
-        TECHNOLOGIES AVAILABLE FOR LICENSING & COMMERCIALIZATION
+        Continuing Education Programme (CEP)
         </Heading>
+        
+      <div className="text-lg text-gray-800 max-w-8xl mx-auto mb-8">
+        IIT Indore has organized several Continuing Education Programmes (CEPs) and Short Courses for working professionals in industry, institutions and universities across India, to enable them to update their knowledge and skills, and also to train them in state-of-the-art facilities. The details of CEPs organized at IIT Indore are listed below:
+      </div>
+
         <Table w="100%" variant="striped">
           <Thead>
+    
             <Tr className="bg-gray-200">
               <Th className="w-6">S.No</Th>
-              <Th>Technology</Th>
-              <Th>Application Area</Th>
+              <Th >Period</Th>
+              <Th >Particulars</Th>
             
             </Tr>
           </Thead>
@@ -40,8 +47,8 @@ const Technologies = () => {
             {data.map((item, index) => (
               <Tr key={index} className={`hover:bg-table ${index % 2 === 0 ? 'bg-gray-100' : ''}`}>
                 <Td>{index + 1}</Td>
-                <Td>{item.technology}</Td>
-                <Td>{item.applicationarea}</Td>
+                <Td>{item.Period}</Td>
+                <Td className='r'>{item.Particulars}</Td>
                 
               </Tr>
             ))}
@@ -53,3 +60,5 @@ const Technologies = () => {
 };
 
 export default Technologies;
+
+ 

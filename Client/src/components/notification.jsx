@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
-
+// This component contains notification box 
 const Notification = () => {
 const [data,setData]=useState('')
+
+// React hook to fetch data 
 useEffect(()=>{
   const fetchData = async()=>{
   try {
@@ -17,7 +19,7 @@ useEffect(()=>{
 
 
   const handleArchive = ()=>{
-    window.location.href = '/notification'
+    window.location.href = '/notification'   // Opens up the Archive`s page
   }
   return (
     <div>

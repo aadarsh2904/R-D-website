@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/navbar';
-import Prius from '../components/ResearchInitiatives/Prius';
+import Prius from '../components/Prius';
 import Footer from '../components/Footer/Footer';
 
 

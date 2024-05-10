@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// This component contains the section of Publications page 
 import axios from 'axios';
 import { Table, Thead, Tbody, Tr, Th, Td, Box,Heading } from '@chakra-ui/react';
 import { Select, Flex, Stack } from '@chakra-ui/react';
@@ -12,13 +13,10 @@ const Publication = () => {
     year: '',
     facultyMember: '',
     department: '',
-    // publicationTypes: [],
-    // years: [],
-    // facultyMembers: [],
-    // departments: []
+    
   });
   
-
+// Fetching data from backend api 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -100,6 +98,7 @@ const Publication = () => {
       Publication
         </Heading>
         <Stack spacing={8} px={4} py={8} alignItems="center">
+          {/* Filters  */}
           <Flex flexWrap="wrap" justifyContent="space-between" width="100%">
             <Select
               variant="filled"

@@ -1,6 +1,5 @@
 import React from 'react'
-
-
+// This component contains the section above navbar 
 const navbar = () => {
   return (
 
@@ -27,10 +26,7 @@ const navbar = () => {
               <p className=' text-2xl max-lg:text-xl  max-md:text-lg max-[698px]:text-sm'>  Indian Institute of Technology Indore</p>
               </div>
             </div>
-{/* 
-            <button className='bg-blue-700 p-2.5 border-2 border-blue-800 rounded-lg ml-[40rem] text-lg text-white font-semibold hover:bg-white hover:text-blue-700 hover:ring-2 '>
-              <a href='https://www.iiti.ac.in/' target='_blank'>
-              &larr; IITI Website</a></button> */}
+
 
           </div>
 

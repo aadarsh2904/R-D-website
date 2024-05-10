@@ -21,6 +21,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
+      {/* Here add the  endpoints/Routes  */}
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/people" element={<People/>}></Route>

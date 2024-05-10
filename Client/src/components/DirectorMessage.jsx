@@ -7,6 +7,7 @@ function Expensenew() {
       <div className="flex flex-row flex-wrap w-[85%] mx-auto p-4 mt-8 pl-10 py-8 max-sm:pl-4">
         <div className="w-[20%] min-w-[20rem] flex flex-col mx-auto p-6 ">
           <hr className=" w-[50%] border-4 border-solid border-blue-700 " />
+          {/* Image of Director Sir  */}
           <img
             src={"Dir.png"}
             alt="Logo"

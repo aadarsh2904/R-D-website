@@ -88,5 +88,5 @@ const Carousel = ({ images }) => {
   );
 };
 
-export default Carousel;
+export default Carousel; // It is exported to display.jsx
 
